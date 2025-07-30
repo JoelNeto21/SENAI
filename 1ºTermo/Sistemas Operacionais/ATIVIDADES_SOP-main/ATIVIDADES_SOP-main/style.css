@@ -1,0 +1,133 @@
+body {
+  background: #f4f6fa;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #222;
+  margin: 0;
+  padding: 0 0 40px 0;
+}
+.container {
+  max-width: 700px;
+  margin: 40px auto 0 auto;
+  background: #f9fafe;
+  border-radius: 10px;
+  box-shadow: 0 4px 24px rgba(60, 60, 100, 0.07);
+  padding: 32px 36px 36px 36px;
+}
+h1 {
+  background: #1a237e;
+  color: #fff;
+  padding: 24px 0 24px 0;
+  margin: 0 0 24px 0;
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 2.2em;
+  box-shadow: 0px 1px 10px black;
+  /* border-bottom: 4px solid #3949ab; */
+  /* border-radius: 8px 8px 0 0; */
+}
+h2 {
+  color: #283593;
+  margin-top: 32px;
+  margin-bottom: 8px;
+  font-size: 1.4em;
+}
+h4 {
+  color: #3949ab;
+  margin: 8px 0 12px 0;
+  font-weight: normal;
+}
+p {
+  background: #fff;
+  border-left: 5px solid #3949ab;
+  margin: 12px 0 24px 0;
+  padding: 16px 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(60, 60, 100, 0.04);
+  font-size: 1.05em;
+  line-height: 1.6;
+}
+b {
+  color: #1a237e;
+}
+hr {
+  border: none;
+  border-top: 2px solid #c5cae9;
+  margin: 32px 0;
+}
+@media (max-width: 800px) {
+  .container {
+    max-width: 98vw;
+    padding: 5vw 3vw 10vw 3vw;
+    margin: 0px 3vw 0px 3vw;
+  }
+}
+@media (max-width: 600px) {
+  body {
+    padding: 0px 0vw 45px 0vw;
+  }
+  .container {
+    padding: 4vw 3vw 8vw 3vw;
+    margin: 0px 2vw 0px 2vw;
+  }
+  h1 {
+    font-size: 1.3em;
+    padding: 16px 0 10px 0;
+  }
+  p {
+    padding: 12px 10px;
+  }
+}
+
+/* ------------------------------- */
+
+.carousel {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto 32px auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px #0002;
+  background: #fff;
+}
+.carousel-images {
+  display: flex;
+  transition: transform 0.5s;
+}
+.carousel-item {
+  min-width: 100%;
+  box-sizing: border-box;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+.carousel-item.active {
+  display: flex;
+}
+.carousel img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+}
+.caption {
+  background: #3949ab;
+  color: #fff;
+  padding: 8px;
+  text-align: center;
+  width: 100%;
+  font-size: 1em;
+}
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #3949abcc;
+  color: #fff;
+  border: none;
+  font-size: 2em;
+  padding: 0 12px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 2;
+}
+.carousel-btn.prev { left: 10px; }
+.carousel-btn.next { right: 10px; }

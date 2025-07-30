@@ -1,0 +1,269 @@
+/* --- Estilos Globais e de Fonte --- */
+:root {
+  --cor-principal: #0d0d0c;
+  /* Verde escuro */
+  --cor-texto-claro: #fff;
+  --cor-fundo: #f0f2f5;
+  --cor-container: #fff;
+  --cor-sombra: rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: "Ubuntu", Verdana, sans-serif;
+  font-size: 14px;
+  background-color: var(--cor-fundo);
+}
+
+/* --- Barra de Navegação Superior --- */
+.navbar {
+  width: 100%;
+  height: 60px;
+  background: var(--cor-principal);
+  color: var(--cor-texto-claro);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  box-shadow: 0 2px 5px var(--cor-sombra);
+}
+
+.navbar h1 {
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  color: var(--cor-texto-claro);
+  font-size: 1.8rem;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+/* --- Menu Lateral --- */
+.menu {
+  width: 240px;
+  height: 100vh;
+  background: #aa0000;
+  /* Azul escuro */
+  padding-top: 80px;
+  /* Espaço para a navbar */
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  transition: transform 0.3s ease-in-out;
+}
+
+.menu.escondido {
+  transform: translateX(-100%);
+}
+
+.menu button {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  padding: 15px 20px;
+  background-color: transparent;
+  border: none;
+  color: var(--cor-texto-claro);
+  font-size: 1rem;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  /* top | right | bottom | left */
+  margin: 0 -10px 0 10px;
+  /* border-bottom: 1px solid #34495e; */
+}
+
+.menu button:hover {
+  background-color: transparent;
+  transform: translateY(-2px) scale(1.03);
+  /* transition: background 0.2s, transform 0.2s; */
+}
+
+.menu button .icon {
+  font-size: 1.2rem;
+}
+
+/* --- Conteúdo Principal --- */
+.container {
+  margin-left: 240px;
+  padding: 80px 30px 30px 30px;
+  /* Topo, Direita, Baixo, Esquerda */
+  transition: margin-left 0.3s ease-in-out;
+}
+
+.container.menu-fechado {
+  margin-left: 0;
+}
+
+.secao {
+  background: var(--cor-container);
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px var(--cor-sombra);
+}
+
+.secao h2,
+.secao h3 {
+  font-size: 1.6rem;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.secao.hidden {
+  display: none;
+}
+
+/* --- Formulários --- */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border: 1.5px solid #c1272d;
+  outline: none;
+}
+
+button[type="submit"],
+form button {
+  background-color: var(--cor-principal);
+  color: var(--cor-texto-claro);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+button[type="submit"]:hover,
+form button:hover {
+  background-color: #c1272d;
+}
+
+/* --- Tabelas --- */
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 20px;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+/* Estilo dos cabeçalhos */
+th {
+  background-color: #0d0d0c;
+  color: var(--cor-texto-claro);
+  font-weight: bold;
+}
+
+/* Estilo das linhas alternadas */
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Bordas arredondadas corretamente nos cantos */
+thead tr:first-child th:first-child {
+  border-top-left-radius: 5px;
+}
+
+thead tr:first-child th:last-child {
+  border-top-right-radius: 5px;
+}
+
+tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 5px;
+}
+
+tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 5px;
+}
+
+/* --- Mensagens de Feedback --- */
+.mensagem {
+  padding: 12px;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.mensagem.sucesso {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+}
+
+.mensagem.erro {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+}
+
+.hidden {
+  display: none;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+  .menu {
+    transform: translateX(-100%);
+  }
+
+  .menu.escondido {
+    transform: translateX(0);
+  }
+
+  .container {
+    margin-left: 0;
+  }
+
+  .container.menu-fechado {
+    margin-left: 0;
+  }
+}

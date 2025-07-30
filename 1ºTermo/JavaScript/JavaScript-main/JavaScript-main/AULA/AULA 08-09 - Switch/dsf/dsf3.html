@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafio 3 – Calculadora de Área</title>
+  <link rel="stylesheet" href="style.css"> <!-- CSS Global -->
+  <!-- CSS Local -->
+  <style>
+    #s1 {
+      color: green;
+      font-size: 18px;
+    }
+    small {
+      color: #808080;
+    }
+  </style>
+</head>
+<body>
+  <h1>Desafio 3: Calculadora de Área</h1><br>
+
+  <label>Figura :
+    <select id="figura">
+      <option selected disabled hidden></option>
+      <option value="circulo">Círculo</option>
+      <option value="quadrado">Quadrado</option>
+      <option value="triangulo">Triângulo</option>
+    </select>
+  </label>
+
+  <label>Raio<sub><small style="color: #222;">◯</small></sub> : <input type="number" id="raio" style="max-width: 90px;"></label>
+  <label>Lado<sub>▢</sub> : <input type="number" id="lado" style="max-width: 90px;"></label>
+  <label>Base<sub>△</sub> : <input type="number" id="base" style="max-width: 90px;"></label>
+  <label>Altura<sub>△</sub> : <input type="number" id="altura" style="max-width: 90px;"></label><br>
+
+  <button onclick="area()">Calcular</button>
+
+  <div id="out"></div>
+
+  <script>
+    function area() {
+      const out = document.getElementById("out")
+      const fig = document.getElementById('figura').value
+      let area, formula, mensagem
+      switch (fig) {
+        case 'circulo':
+          const r = parseFloat(document.getElementById('raio').value)
+          if (isNaN(r) || r <= 0) {
+            out.innerHTML = `<span>Raio inválido...</span>`
+            return
+          }
+          area = Math.PI * r * r
+          formula = `<small>A = π × ${r}²</small>`
+          mensagem = `<span id = "s1">A = ${area.toFixed(2)}</span>`
+          break
+        case 'quadrado':
+          const l = parseFloat(document.getElementById('lado').value)
+          if (isNaN(l) || l <= 0) {
+            out.innerHTML = `<span>Lado inválido...</span>`
+            return
+          }
+          area = l * l
+          formula = `<small>A = ${l} × ${l}</small>`
+          mensagem = `<span id = "s1">A = ${area.toFixed(2)}</span>`
+          break
+        case 'triangulo':
+          const b = parseFloat(document.getElementById('base').value)
+          const h = parseFloat(document.getElementById('altura').value)
+          if (isNaN(b) || isNaN(h) || b <= 0 || h <= 0) {
+            out.innerHTML = `<span>Base e/ou Altura inválida...</span>`
+            return
+          }
+          area = (b * h) / 2
+          formula = `<small>A = (${b} × ${h}) ÷ 2</small>`
+          mensagem = `<span id = "s1">A = ${area.toFixed(2)}</span>`
+          break
+
+        default:
+          out.innerHTML = `<span>Erro! Figura inválida...</span>`
+          return
+      }
+      out.innerHTML = `${mensagem}<br>${formula}`
+    }
+  </script>
+</body>
+</html>

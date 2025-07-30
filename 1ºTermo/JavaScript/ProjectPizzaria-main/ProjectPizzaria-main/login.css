@@ -1,0 +1,126 @@
+/* --- Estilos Globais e de Fonte --- */
+html,
+body {
+  font-family: "Ubuntu", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 14px;
+  margin: 0;
+  min-height: 100vh;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: url("img/back-theme.png") no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* --- Container Principal --- */
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- Container do Formulário de Login --- */
+.login-container {
+  background: #ffffffdb;
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: stretch;
+}
+
+.login-container h2 {
+  font-size: 1.5rem;
+  margin: 0 0 1rem 0;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+  font-size: 1rem;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #f1f2f6;
+  transition: border 0.2s;
+  font-family: inherit;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 0.5rem;
+}
+
+.login-container input[type="text"]:focus,
+.login-container input[type="password"]:focus {
+  border: 1.5px solid #c1272d;
+  outline: none;
+}
+
+.login-container button {
+  font-size: 1.1rem;
+  background: #0d0d0c;
+  color: #fff;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-family: inherit;
+  font-weight: bold;
+  letter-spacing: 1px;
+  width: 100%;
+}
+
+.login-container button:hover {
+  background: #c1272d;
+}
+
+/* --- Mensagens de Feedback --- */
+.mensagem {
+  font-size: 0.9rem;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 10px;
+  font-weight: bold;
+  transition: opacity 0.3s;
+}
+
+.mensagem.sucesso {
+  color: #28a745;
+}
+
+.mensagem.erro {
+  color: #dc3545;
+}
+
+.hidden {
+  display: none;
+}
+
+/* --- Rodapé --- */
+.footer {
+  width: 100%;
+  text-align: center;
+  color: white;
+  padding: 10px 0 30px 0;
+  font-size: 0.95rem;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 500px) {
+  .login-container {
+    width: 90vw;
+    padding: 2rem 1rem;
+  }
+}

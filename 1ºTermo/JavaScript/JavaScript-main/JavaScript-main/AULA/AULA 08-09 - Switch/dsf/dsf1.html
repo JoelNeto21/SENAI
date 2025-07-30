@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafio 1 – Conversor de Moedas</title>
+  <link rel="stylesheet" href="style.css"> <!-- CSS Global -->
+</head>
+<body>
+  <h1>Desafio 1: Conversor de Moedas</h1><br>
+
+  <label>Taxa dólar (R$): <input type="number" id="taxaDolar" value="5.69" disabled style="max-width: 75px;"></label>
+  <label>Taxa euro (R$): <input type="number" id="taxaEuro" value="6.47" disabled style="max-width: 75px;"></label>
+  <label>Valor em reais (R$): <input type="number" id="reais" step="0.01" style="max-width: 75px;"></label><br>
+
+  <button onclick="converter()">Converter</button>
+
+  <div id="out"></div>
+
+  <script>
+    function converter() {
+      const out = document.getElementById('out')
+      const reais = parseFloat(document.getElementById('reais').value)
+      const taxaD = parseFloat(document.getElementById('taxaDolar').value)
+      const taxaE = parseFloat(document.getElementById('taxaEuro').value)
+      if (isNaN(reais) || reais <= 0) {
+        out.innerHTML = '<span style = "color: red;">Erro! Valor inválido...</span>'
+        return;
+      }
+      const usd = reais / taxaD
+      const eur = reais / taxaE
+      out.innerText = `US$ ${usd.toFixed(2)}\n€ ${eur.toFixed(2)}`
+    }
+  </script>
+</body>

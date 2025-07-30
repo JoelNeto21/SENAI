@@ -1,0 +1,28 @@
+/* .semaforo {
+    position: relative;
+    width: 200px;
+    height: 450px;
+    border: 1px solid #ccc;
+    margin: 30px auto;
+    background-color: black;
+  }
+
+#s1, #s2, #s3 {
+  width: 120px;
+  height: 120px;
+  margin-top: 10px;
+  margin-left: 40px;
+  margin-right: 40px;
+  background-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0px 0px 10px 1px transparent; 
+  border-radius: 100%;
+}
+
+#s1 {
+  margin-top: 35px;
+} */
+
+#if {
+  color: rgba(0, 0, 0, 0.454);
+  font-size: 11px;
+}

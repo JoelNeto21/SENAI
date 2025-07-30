@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cardápio - Pizzaria</title>
+    <link
+      rel="icon"
+      href="https://cdn-icons-png.flaticon.com/512/3132/3132693.png"
+      type="image/png"
+    />
+    <link rel="stylesheet" href="pizzaria-client.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header class="cabecalho">
+      <img
+        src="img/pizza-logo.png"
+        alt="Logo Pizzaria"
+        style="width: 200px; margin: 0.2em 0 0.2em"
+      />
+      <button class="botao-carrinho" id="botao-abrir-carrinho">
+        <i class="fas fa-shopping-cart icone-carrinho fa-2x"></i>
+        <span class="contagem-carrinho" id="contagem-carrinho">0</span>
+      </button>
+    </header>
+
+    <main class="container">
+      <h2 class="titulo-cardapio">Nosso Cardápio</h2>
+      <div class="lista-pizzas" id="cardapio">
+        <!-- As pizzas do localStorage serão inseridas aqui -->
+      </div>
+    </main>
+
+    <!-- Carrinho de Compras Lateral -->
+    <aside class="carrinho-lateral" id="carrinho-lateral">
+      <div class="carrinho-cabecalho">
+        <h3 class="carrinho-titulo">Seu Pedido</h3>
+        <button class="botao-fechar-carrinho" id="botao-fechar-carrinho">
+          &times;
+        </button>
+      </div>
+      <div class="carrinho-itens" id="carrinho-itens"></div>
+      <div class="carrinho-rodape">
+        <div class="carrinho-total">
+          <span>Total:</span>
+          <span id="valor-total-carrinho">R$ 0,00</span>
+        </div>
+        <button
+          class="botao-finalizar-pedido"
+          id="botao-finalizar-pedido"
+          disabled
+        >
+          Finalizar Pedido
+        </button>
+      </div>
+    </aside>
+
+    <!-- Modal de Confirmação de Pedido -->
+    <div class="modal-overlay" id="modal-confirmacao">
+      <div class="modal-conteudo">
+        <img
+          src="https://api.iconify.design/solar:check-circle-bold.svg?color=%2328a745"
+          alt="Ícone de Sucesso"
+          width="60"
+          style="margin: 0 auto"
+        />
+        <h4 class="modal-titulo">Pedido Enviado!</h4>
+        <p class="modal-mensagem">
+          Sua pizza já está no forno!<br />Agradecemos a preferência.
+        </p>
+        <button class="botao-fechar-modal" id="botao-fechar-modal">
+          Fechar
+        </button>
+      </div>
+    </div>
+
+    <script src="pizzaria-client.js"></script>
+  </body>
+</html>

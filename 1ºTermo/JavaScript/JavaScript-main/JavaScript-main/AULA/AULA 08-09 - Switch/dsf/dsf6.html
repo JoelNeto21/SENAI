@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafio 6 – Loja de Roupas</title>
+  <link rel="stylesheet" href="style.css"> <!-- CSS Global -->
+  <!-- CSS Local -->
+  <style>
+    small {
+      color: #F70A8D;
+    }
+  </style>
+</head>
+<body>
+  <h1>Desafio 6: Loja de Roupas</h1><br>
+
+  <label>Tipo (camisa, calça, vestido): <input type="text" id="tipo"></label>
+  <label>Qtd: <input type="number" id="qtd" min="1" value="1" style="max-width: 75px;"></label><br>
+
+  <button onclick="calc()">Calcular</button>
+
+  <div id="out"></div>
+
+  <script>
+    function calc() {
+      const out = document.getElementById('out')
+      const roupa = document.getElementById('tipo').value.trim().toLowerCase()
+      const qtd = parseInt(document.getElementById('qtd').value)
+      let preco
+      switch (roupa) {
+        case 'camisa':  
+          preco = 50  
+          break
+        case 'calça':   
+          preco = 100 
+          break
+        case 'vestido': 
+          preco = 150 
+          break
+        default: 
+          preco = 0
+      }
+      if (preco === 0 || isNaN(qtd) ||qtd <= 0) {
+        out.innerHTML = `<span>Erro! Dados inválidos...</span>`
+        return
+      }
+      let total = preco * qtd
+      if (total > 100){ 
+        total *= 0.9 // 10% off
+        out.innerHTML = `Total: R$ ${total.toFixed(2)}\n<small>🎉Ganhou 10% off</small>`
+      } else {
+        out.innerText = `Total: R$ ${total.toFixed(2)}`
+      }
+    }
+  </script>
+</body>
+</html>

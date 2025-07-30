@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atividade de Signos</title>
+  </head>
+  <body>
+    <h1>Descubra seu signo</h1>
+    Selecione o mês:
+    <select id="mySelect">
+      <option selected disabled hidden></option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+    </select>
+    <br><br>
+    <button onclick="exibirSigno()">Mostrar Signo</button>
+    <br>
+    <p id="result"></p>
+
+    <script>
+        function exibirSigno(){
+
+            const selectElement = document.getElementById("mySelect");
+            const selectedIndex = selectElement.selectedIndex;
+            const selectedValue = Number(selectElement.options[selectedIndex].value);
+            console.log("Valor selecionado:", selectedValue);
+
+            let signo
+
+            switch (selectedValue) {
+                case 1:
+                    signo = "Áries"
+                    break;
+            
+                case 2:
+                    signo = "Touro"
+                    break;
+            
+                case 3:
+                    signo = "Gêmeos"
+                    break;
+            
+                case 4:
+                    signo = "Câncer"
+                    break;
+            
+                case 5:
+                    signo = "Leão"
+                    break;
+            
+                case 6:
+                    signo = "Virgem"
+                    break;
+            
+                case 7:
+                    signo = "Libra"
+                    break;
+            
+                case 8:
+                    signo = "Escorpião"
+                    break;
+            
+                case 9:
+                    signo = "Sagitário"
+                    break;
+            
+                case 10:
+                    signo = "Capricórnio"
+                    break;
+            
+                case 11:
+                    signo = "Aquário"
+                    break;
+            
+                case 12:
+                    signo = "Peixes"
+                    break;
+            
+                default:
+                    signo = '...'
+                    break;
+            }
+            document.getElementById("result").innerHTML = `Signo = <b>${signo}</b>`
+        }
+    </script>
+  </body>
+</html>

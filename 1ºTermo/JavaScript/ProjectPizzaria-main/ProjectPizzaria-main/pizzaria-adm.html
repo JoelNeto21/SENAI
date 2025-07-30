@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin - Pizzaria</title>
+    <link rel="stylesheet" href="pizzaria-adm.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="https://cdn-icons-png.flaticon.com/512/3132/3132693.png"
+      type="image/png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <button
+        id="btn-menu"
+        class="menu-toggle"
+        onclick="toggleMenu()"
+        aria-label="Abrir/Fechar menu"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+      <img
+        src="img/pizza-logo.png"
+        alt="Logo Pizzaria"
+        style="width: 200px; margin: 3em 0 3em"
+      />
+    </nav>
+
+    <aside class="menu" id="menu-lateral">
+      <button onclick="mostrarSecao('cadastro')">
+        <i class="fas fa-plus-circle icon"></i>Cadastrar Pizza
+      </button>
+      <button onclick="mostrarSecao('consulta')">
+        <i class="fas fa-search icon"></i>Consultar Pizzas
+      </button>
+      <button onclick="mostrarSecao('alterar')">
+        <i class="fas fa-edit icon"></i>Alterar Pizza
+      </button>
+      <button onclick="mostrarSecao('venda')">
+        <i class="fas fa-cash-register icon"></i>Realizar Pedido
+      </button>
+      <button onclick="mostrarSecao('relatorio')">
+        <i class="fas fa-chart-line icon"></i>Relatório de Vendas
+      </button>
+    </aside>
+
+    <main class="container" id="container-principal">
+      <!-- Seção de Cadastro -->
+      <section id="cadastro" class="secao">
+        <h2>Cadastrar Nova Pizza</h2>
+        <form id="form-cadastro">
+          <div class="form-group">
+            <label for="nome">Nome da Pizza:</label>
+            <input type="text" id="nome" placeholder="Ex: Calabresa" required />
+          </div>
+          <div class="form-group">
+            <label for="ingredientes">Ingredientes:</label>
+            <input
+              type="text"
+              id="ingredientes"
+              placeholder="Ex: Molho, mussarela, calabresa..."
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="preco">Preço (R$):</label>
+            <input
+              type="number"
+              id="preco"
+              placeholder="Ex: 45.50"
+              required
+              min="0.01"
+              step="0.01"
+            />
+          </div>
+          <button type="submit">Adicionar Pizza</button>
+          <div id="msg-cadastro" class="mensagem hidden"></div>
+        </form>
+      </section>
+
+      <!-- Seção de Consulta -->
+      <section id="consulta" class="secao hidden">
+        <h2>Consultar Pizzas do Cardápio</h2>
+        <div class="form-group">
+          <input
+            type="text"
+            id="busca"
+            placeholder="Buscar por nome ou código..."
+            oninput="filtrarPizzas()"
+          />
+        </div>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Cód.</th>
+                <th>Sabor</th>
+                <th>Ingredientes</th>
+                <th>Preço</th>
+              </tr>
+            </thead>
+            <tbody id="lista-pizzas"></tbody>
+          </table>
+        </div>
+        <div id="msg-consulta" class="mensagem hidden"></div>
+      </section>
+
+      <!-- Seção de Alteração -->
+      <section id="alterar" class="secao hidden">
+        <h2>Alterar Pizza</h2>
+        <form id="form-busca-alterar">
+          <div class="form-group">
+            <label for="busca-alterar">Buscar por Código:</label>
+            <input
+              type="text"
+              id="busca-alterar"
+              placeholder="Digite o código da pizza"
+            />
+          </div>
+          <button type="submit">Buscar Pizza</button>
+        </form>
+        <form id="form-alterar" class="hidden">
+          <h3>Alterando Pizza Cód. <span id="codigo-pizza-alterar"></span></h3>
+          <div class="form-group">
+            <label for="novo-nome">Novo Nome:</label>
+            <input type="text" id="novo-nome" required />
+          </div>
+          <div class="form-group">
+            <label for="novos-ingredientes">Novos Ingredientes:</label>
+            <input type="text" id="novos-ingredientes" required />
+          </div>
+          <div class="form-group">
+            <label for="novo-preco">Novo Preço (R$):</label>
+            <input
+              type="number"
+              id="novo-preco"
+              required
+              min="0.01"
+              step="0.01"
+            />
+          </div>
+          <button type="submit">Salvar Alterações</button>
+        </form>
+        <div id="msg-alterar" class="mensagem hidden"></div>
+      </section>
+
+      <!-- Seção de Venda -->
+      <section id="venda" class="secao hidden">
+        <h2>Registrar Nova Venda</h2>
+        <form id="form-venda">
+          <div class="form-group">
+            <label for="venda-pizza">Selecione a Pizza:</label>
+            <select id="venda-pizza" required></select>
+          </div>
+          <div class="form-group">
+            <label for="venda-quantidade">Quantidade:</label>
+            <input
+              type="number"
+              id="venda-quantidade"
+              value="1"
+              required
+              min="1"
+            />
+          </div>
+          <div class="form-group">
+            <label for="venda-comprador">Nome do Comprador:</label>
+            <input type="text" id="venda-comprador" placeholder="Opcional" />
+          </div>
+          <button type="submit">Registrar Venda</button>
+        </form>
+        <div id="msg-venda" class="mensagem hidden"></div>
+      </section>
+
+      <!-- Seção de Relatório de Vendas -->
+      <section id="relatorio" class="secao hidden">
+        <h2>Relatório de Vendas</h2>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Pizza</th>
+                <th>Qtd.</th>
+                <th>Comprador</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody id="tabela-relatorio-vendas"></tbody>
+          </table>
+        </div>
+        <div id="msg-relatorio" class="mensagem hidden"></div>
+      </section>
+    </main>
+
+    <script src="pizzaria-adm.js"></script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Pizzaria</title>
+    <link rel="stylesheet" href="login.css" />
+    <link
+      rel="icon"
+      href="https://cdn-icons-png.flaticon.com/512/3132/3132693.png"
+      type="image/png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="main-content">
+      <div class="login-container">
+        <img
+          src="img/pizza-logo1.png"
+          alt="Logo Pizzaria"
+          style="width: 300px; margin: auto"
+        />
+        <form onsubmit="validarLogin(event)">
+          <input
+            type="text"
+            id="usuario"
+            placeholder="Digite seu usuário"
+            required
+          />
+          <input
+            type="password"
+            id="senha"
+            placeholder="Digite sua senha"
+            required
+          />
+          <button type="submit">Entrar</button>
+          <div id="msg" class="mensagem hidden"></div>
+        </form>
+      </div>
+    </div>
+
+    <footer class="footer">
+      ® 2025 • Kauabanga Pizzaria<br />
+      <small><i>Todos os direitos reservados</i></small>
+    </footer>
+
+    <script src="login.js"></script>
+  </body>
+</html>

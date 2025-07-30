@@ -1,0 +1,77 @@
+/* Reset simples */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Layout base */
+body {
+  font-family: sans-serif;
+  background: #fafafa;
+  color: #333;
+  padding: 20px;
+}
+
+/* Tipografia */
+h1 {
+  color: #222;
+  margin-bottom: 8px;
+}
+
+/* Labels */
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Campos de entrada */
+input,
+select {
+  font: inherit;
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: 200px;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Botões */
+button {
+  font: inherit;
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  border: none;
+  background: #444;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button:hover {
+  background: #222;
+}
+
+/* Resultado */
+#out {
+  margin-top: 10px;
+  padding: 8px;
+  border-radius: 4px;
+  white-space: pre-wrap;
+}
+
+/* Alinhamento de checkbox com texto */
+.servico-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  margin-left: -90px;
+}
+.servico-item input[type="checkbox"] {
+  margin-right: -70px;
+}
+
+/* Span para destacar erros */
+span {
+  color: red;
+}

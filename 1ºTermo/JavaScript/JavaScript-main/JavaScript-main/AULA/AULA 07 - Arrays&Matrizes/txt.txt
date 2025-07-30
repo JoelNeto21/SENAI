@@ -1,0 +1,70 @@
+1. ATIVIDADE 1 - SEMÁFORO
+
+Crie um programa para simular um cenário de alteração com as
+cores padrão (Verde, Vermelho, Laranja). O cenário deve ser por
+opção que quando inserir o valor 1 por exemplo, apresenta a
+mensagem Vermelho.
+
+
+
+
+
+2. ATIVIDADE 2 - MECÂNICA DO ZÉ
+
+O programa que irá criar deverá apresentar as opções de
+serviços oferecidos por um menu. A partir da escolha do serviço,
+ao encerrar deverá apresentar um resumo com serviço realizado
+com o nome do cliente e valor total final.
+
+serviços | nome | total | 
+
+
+
+3. ATIVIDADE 3 - CÁLCULO DE NOTAS
+
+O programa que criar deve calcular as notas que deve ser
+inserido em um prompt ou input assim como o nome do aluno,
+porém as notas serão apresentadas em 3 caixas como Nota1,
+Nota2, Nota3 e trabalhos.
+
+Ao final deverá ser dividido por 4 é apresentado a mensagem
+com nome do aluno e resultado se foi aprovado ou reprovado ou
+se está de recuperação onde que para ser aprovado o aluno
+deverá tirar 6 no mínimo.
+
+Se a nota for abaixo de 5 o aluno está reprovado e o intervalo
+desse valor é de recuperação.
+
+
+
+
+
+4. ATIVIDADE 4 - CALCULADORA DE IMC
+
+Crie um programa que calcule o Índice de Massa Corporal (IMC)
+de uma pessoa.
+
+O programa deve solicitar ao usuário que insira seu nome, peso
+(em kg) e altura (em metros). Após calcular o IMC, o programa
+deve exibir o resultado e classificar o IMC de acordo com as
+seguintes categorias:
+
+Abaixo do peso: IMC menor que 18,5
+Peso normal: IMC entre 18,5 e 24,9
+Sobrepeso: IMC entre 25 e 29,9
+Obesidade: IMC 30 ou mais
+
+Ao final, apresentar o nome do cliente e o resultado.
+
+
+
+
+
+5. ATIVIDADE 5 - ENCOMENDA DE PRODUTOS
+
+Crie um programa para que seja realizado a reserva de produtos
+para um cliente.
+
+O sistema deverá exibir uma janela perguntando as informações
+necessárias para o cliente e ao fim da reserva apresentar os
+resultados do produto reservado.

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Desafio 5 – Mecânica de Carros</title>
+  <link rel="stylesheet" href="style.css"> <!-- CSS Global -->
+</head>
+<body>
+  <h1>Desafio 5: Mecânica de Carros</h1><br>
+
+  <label>Digite o modelo do carro: <input type="text" id="modelo" placeholder="Fusca - Gol - Uno"></label>
+
+  <label>Serviços (marque todos que desejar):</label><br>
+  <div class="servico-item">
+    <input type="checkbox" id="lavagem" name="servico" value="50">
+    <label>Lavagem – R$ 50,00</label>
+  </div>
+  <div class="servico-item">
+    <input type="checkbox" id="oleo" name="servico" value="150">
+    <label>Troca de óleo – R$ 150,00</label>
+  </div>
+  <div class="servico-item">
+    <input type="checkbox" id="alinhamento" name="servico" value="120">
+    <label>Alinhamento – R$ 120,00</label>
+  </div>
+  <div class="servico-item">
+    <input type="checkbox" id="balanceamento" name="servico" value="100">
+    <label>Balanceamento – R$ 100,00</label>
+  </div>
+  <div class="servico-item">
+    <input type="checkbox" id="revisao" name="servico" value="300">
+    <label>Revisão completa – R$ 300,00</label>
+  </div>
+  <br>
+
+  <button onclick="info()">Exibir Relatório</button>
+
+  <div id="out"></div>
+
+  <script>
+    function info() {
+      const out = document.getElementById('out')
+      const modelo = document.getElementById('modelo').value.trim().toLowerCase()
+      const checks = document.querySelectorAll('input[name="servico"]:checked')
+      let dados
+      switch (modelo) {
+        case 'fusca':
+          dados = `<b>FUSCA<sub><small> (info.)</small></sub><br></b>\nValor: R$ 20.000\nAno: 1980\nCombustível: Gasolina`
+          break
+        case 'gol':
+          dados = `<b>GOL<sub><small> (info.)</small></sub><br></b>\nValor: R$ 40.000\nAno: 2005\nCombustível: Flex`
+          break
+        case 'uno':
+          dados = `<b>UNO<sub><small> (info.)</small></sub><br></b>\nValor: R$ 30.000\nAno: 2010\nCombustível: Etanol`
+          break
+        default:
+          dados = `<span>Modelo não cadastrado</span>`
+      }
+      let total = 0
+      checks.forEach(chk => total += parseFloat(chk.value))
+      const servText = checks.length > 0
+        ? `💸Taxa de serviços: R$ ${total.toFixed(2)}`
+        : `<span>Nenhum serviço selecionado</span>`
+      out.innerHTML = `${dados}\n\n${servText}`
+    }
+  </script>
+</body>
+</html>

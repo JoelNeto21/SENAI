@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mecânica do Zé</title>
+    <link rel="stylesheet" type="text/css" href="mecanica.css">
+    
+</head>
+<body>
+    <div class="mecanica">
+        <p>
+            Bem-Vindo ao Lava Rápido do João!
+            <br>
+            O melhor da região!
+        <ol>Serviços disponíveis:
+            <li>Lavagem simples - R$ 20,00</li>
+            <li>Lavagem completa - R$ 30,00</li>
+            <li>Enceramento - R$ 50,00</li>
+        </ol>
+
+        <input type="text" id="vetorItem" placeholder="Digite o nº do seviço escolhido">
+
+        <p id="if">*Se escolher mais de um item separe com a vírgula ( , )</p>
+        
+
+        <button class="calc" onclick="calcular()">Calcular</button>
+
+        <p id="valorTotal"></p>
+    </div>
+    <script src="mecanica.js"></script>
+</body>
+</html>
