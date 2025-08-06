@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notícia: Inovação Urbana - Projeto 'Cidade Verde'</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Merriweather', serif;
+            background-color: #f8f8f8; /* Quase branco para simular papel */
+            color: #1a1a1a; /* Preto quase puro para o texto */
+            line-height: 1.6;
+            padding: 2rem 0;
+        }
+        .article-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 2.5rem;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            border-radius: 0.75rem; /* rounded-xl */
+        }
+        .article-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #333;
+            padding-bottom: 1rem;
+        }
+        .article-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+        }
+        .article-header p {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: #555;
+        }
+        .article-content {
+            column-count: 2; /* Duas colunas para o efeito de jornal */
+            column-gap: 2.5rem; /* Espaço entre as colunas */
+            text-align: justify;
+            margin-bottom: 2rem;
+        }
+        .article-content p {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+        .article-content img {
+            width: 100%;
+            height: auto;
+            margin: 1.5rem 0;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            break-inside: avoid-column; /* Evita que a imagem seja cortada entre colunas */
+            border-radius: 0.5rem; /* rounded-lg */
+        }
+        .quote-box {
+            background-color: #f0f0f0;
+            border-left: 5px solid #c0392b; /* Linha vermelha para destaque */
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: #333;
+            break-inside: avoid-column;
+            border-radius: 0.5rem; /* rounded-lg */
+        }
+        .quote-box strong {
+            display: block;
+            margin-top: 0.5rem;
+            font-style: normal;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+        .back-button-container {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .back-button {
+            background-color: #34495e;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 0.5rem; /* rounded-lg */
+            transition: background-color 0.3s ease;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            display: inline-block;
+        }
+        .back-button:hover {
+            background-color: #2c3e50;
+        }
+
+        /* Responsividade para colunas */
+        @media (max-width: 768px) {
+            .article-content {
+                column-count: 1; /* Uma coluna em telas menores */
+            }
+            .article-container {
+                padding: 1.5rem;
+            }
+            .article-header h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-container">
+        <header class="article-header">
+            <h1>Inovação Urbana: Projeto 'Cidade Verde' Transforma Metrópole</h1>
+            <p>Por: Equipe de Redação - Jornal da Manhã | 4 de Agosto de 2025</p>
+        </header>
+
+        <section class="article-content">
+            <p>O ambicioso projeto "Cidade Verde", que visa integrar tecnologia e sustentabilidade no coração da metrópole, está em fase final de implementação. Com parques suspensos, transporte público elétrico e sistemas de energia renovável, a iniciativa promete revolucionar a vida urbana e servir de modelo para cidades em todo o mundo. Especialistas apontam que a qualidade de vida dos moradores já apresenta melhorias significativas.</p>
+
+            <img src="https://placehold.co/800x500/a0a0a0/ffffff?text=Parque+Urbano+Sustentável" alt="Parque Urbano Sustentável">
+
+            <p>A iniciativa, que teve um investimento de bilhões, concentra-se em três pilares principais: infraestrutura verde, mobilidade inteligente e energia limpa. Os parques suspensos, por exemplo, não são apenas áreas de lazer, mas também atuam como filtros naturais de ar e contribuem para a redução das ilhas de calor urbanas. Eles são interligados por passarelas e ciclovias, incentivando o deslocamento ativo dos cidadãos.</p>
+
+            <div class="quote-box">
+                "Este é um marco para nossa cidade. Estamos construindo um futuro mais limpo e habitável para todos, um lugar onde a natureza e a tecnologia coexistem em harmonia."
+                <strong>— João Silva, Prefeito da Metrópole</strong>
+            </div>
+
+            <p>No quesito mobilidade, a frota de ônibus a diesel foi completamente substituída por veículos elétricos e hidrogênio, e uma rede de trens leves foi expandida, conectando todas as regiões da cidade. Além disso, pontos de recarga para carros elétricos foram instalados em cada esquina, facilitando a transição para veículos mais sustentáveis.</p>
+
+            <img src="https://placehold.co/800x500/b0b0b0/ffffff?text=Transporte+Elétrico" alt="Transporte Elétrico">
+
+            <p>A energia que alimenta a "Cidade Verde" provém majoritariamente de fontes renováveis. Painéis solares foram instalados em edifícios públicos e privados, e pequenas turbinas eólicas foram integradas à paisagem urbana, aproveitando os ventos para gerar eletricidade. Um sistema inteligente de gerenciamento de energia otimiza o consumo e distribui a eletricidade de forma eficiente.</p>
+
+            <div class="quote-box">
+                "Nunca imaginei que viver em uma grande cidade poderia ser tão agradável e conectado à natureza. O ar está mais puro, o barulho diminuiu, e temos espaços verdes por toda parte."
+                <strong>— Maria Oliveira, Moradora Antiga da Cidade</strong>
+            </div>
+
+            <p>Os desafios para a implementação foram muitos, desde a burocracia até a resistência inicial de alguns setores. No entanto, a visão de longo prazo e o engajamento da comunidade foram cruciais para superar os obstáculos. A educação ambiental também foi um componente chave, com programas nas escolas e campanhas de conscientização para a população.</p>
+
+            <img src="https://placehold.co/800x500/c0c0c0/ffffff?text=Painéis+Solares+Urbanos" alt="Painéis Solares Urbanos">
+
+            <p>O sucesso do "Cidade Verde" já atraiu a atenção internacional, com delegações de outras grandes cidades visitando a metrópole para aprender com a experiência. A expectativa é que o modelo seja replicado em diversas partes do mundo, inspirando uma nova era de desenvolvimento urbano sustentável e consciente.</p>
+
+            <div class="quote-box">
+                "O 'Cidade Verde' não é apenas um projeto de infraestrutura, é uma mudança de mentalidade. Mostra que é possível conciliar o crescimento urbano com a preservação ambiental e a qualidade de vida."
+                <strong>— Dra. Ana Costa, Renomada Urbanista</strong>
+            </div>
+        </section>
+
+        <div class="back-button-container">
+            <a href="index.html" class="back-button">Voltar para a Página Principal</a>
+        </div>
+    </div>
+</body>
+</html>
