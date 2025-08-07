@@ -1,0 +1,415 @@
+/* Reset básico e estilos globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    /* Fonte principal para o corpo do texto */
+    color: #333;
+    /* Cor padrão do texto */
+    background-color: #f8f8f8;
+    /* Fundo levemente cinza */
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+    /* Espaçamento lateral padrão */
+}
+
+/* Estilo para a fonte dos títulos, similar ao NYT */
+.font-headline {
+    font-family: 'Merriweather', serif;
+}
+
+/* Estilos para links de notícias */
+.article-link {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+.article-link:hover {
+    color: #0056b3;
+    /* Azul mais escuro no hover */
+}
+
+/* Estilos para botões */
+.btn-primary {
+    background-color: #0056b3;
+    /* Azul principal */
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.875rem;
+    /* 14px */
+    transition: background-color 0.2s ease-in-out;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #004085;
+    /* Azul mais escuro no hover */
+}
+
+/* Estilo para a linha divisória horizontal, comum em jornais */
+.horizontal-divider {
+    border-top: 1px solid #e0e0e0;
+    margin: 24px 0;
+}
+
+/* --- Cabeçalho Principal --- */
+.header {
+    background-color: white;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 12px 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-date-weather {
+    font-size: 0.75rem;
+    /* 12px */
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.header-title {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.header-title h1 {
+    font-size: 3.5rem;
+    /* 56px */
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 8px;
+}
+
+.header-actions a {
+    font-size: 0.875rem;
+    /* 14px */
+    color: #555;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+.header-actions a:hover {
+    color: #0056b3;
+}
+
+/* --- Barra de Navegação Principal --- */
+.navbar {
+    background-color: white;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 8px 0;
+}
+
+.navbar-links {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    font-size: 0.875rem;
+    /* 14px */
+    font-weight: 500;
+    flex-wrap: wrap;
+    /* Permite que os links quebrem a linha em telas pequenas */
+}
+
+.navbar-links a {
+    color: #555;
+    text-decoration: none;
+    padding: 4px 0;
+    transition: color 0.2s ease-in-out;
+}
+
+.navbar-links a:hover {
+    color: #0056b3;
+}
+
+/* --- Conteúdo Principal --- */
+.main-content {
+    padding: 32px 0;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* Coluna única por padrão */
+    gap: 32px;
+}
+
+/* Coluna Principal de Artigos */
+.main-articles-section article {
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.main-articles-section article:last-child {
+    border-bottom: none;
+    /* Remove a borda do último artigo na seção */
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.main-article-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 16px;
+    border-radius: 8px;
+}
+
+.main-article-title {
+    font-size: 2.5rem;
+    /* 40px */
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 12px;
+}
+
+.main-article-excerpt {
+    font-size: 1.125rem;
+    /* 18px */
+    color: #555;
+    margin-bottom: 16px;
+}
+
+.main-article-meta {
+    font-size: 0.875rem;
+    /* 14px */
+    color: #777;
+}
+
+/* Seção de Artigos Secundários em Colunas */
+.secondary-articles-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* Coluna única por padrão */
+    gap: 24px;
+}
+
+.secondary-articles-grid article {
+    padding-bottom: 24px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.secondary-articles-grid article:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.secondary-article-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 12px;
+    border-radius: 8px;
+}
+
+.secondary-article-title {
+    font-size: 1.5rem;
+    /* 24px */
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 8px;
+}
+
+.secondary-article-excerpt {
+    color: #555;
+    font-size: 0.875rem;
+    /* 14px */
+    margin-bottom: 12px;
+}
+
+.secondary-article-meta {
+    font-size: 0.75rem;
+    /* 12px */
+    color: #777;
+}
+
+
+/* Barra Lateral (Sidebar) */
+.sidebar {
+    /* Removido display: none; para que a sidebar seja visível por padrão em telas grandes */
+    border-left: 1px solid #e0e0e0;
+    padding-left: 24px;
+}
+
+.sidebar-title {
+    font-size: 1.25rem;
+    /* 20px */
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 16px;
+}
+
+.sidebar ul li:last-child {
+    margin-bottom: 0;
+}
+
+.sidebar ul li a {
+    font-size: 1.125rem;
+    /* 18px */
+    font-weight: 500;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+.sidebar ul li a:hover {
+    color: #0056b3;
+}
+
+.sidebar ul li a span.number {
+    color: #0056b3;
+    margin-right: 8px;
+}
+
+.sidebar ul li a span.author {
+    display: block;
+    font-size: 0.875rem;
+    /* 14px */
+    color: #777;
+    margin-top: 4px;
+}
+
+.ad-placeholder {
+    background-color: #f0f0f0;
+    padding: 16px;
+    border-radius: 8px;
+    text-align: center;
+    color: #666;
+    font-size: 0.875rem;
+    /* 14px */
+}
+
+.ad-placeholder p {
+    margin-bottom: 8px;
+}
+
+.ad-placeholder img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+/* --- Rodapé --- */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 32px 0;
+    text-align: center;
+    font-size: 0.875rem;
+    /* 14px */
+}
+
+.footer-links {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #999;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+.footer-links a:hover {
+    color: #0056b3;
+}
+
+.footer-links span {
+    color: #666;
+}
+
+/* --- Media Queries para Responsividade --- */
+
+/* Telas médias (tablets) */
+@media (min-width: 768px) {
+    .header-content {
+        flex-direction: row;
+    }
+
+    .header-date-weather {
+        margin-bottom: 0;
+    }
+
+    .header-actions {
+        margin-top: 0;
+    }
+
+    .header-title h1 {
+        font-size: 4rem;
+        /* 64px */
+    }
+
+    .secondary-articles-grid {
+        grid-template-columns: 1fr 1fr;
+        /* Duas colunas */
+    }
+
+    /* Em telas médias, a sidebar ainda pode estar oculta ou se ajustar */
+    .sidebar {
+        display: none;
+        /* Mantém a sidebar oculta em tablets para priorizar o conteúdo principal */
+    }
+}
+
+/* Telas grandes (desktops) */
+@media (min-width: 1024px) {
+    .content-grid {
+        grid-template-columns: 2fr 1fr;
+        /* Duas colunas: 2/3 para conteúdo principal, 1/3 para sidebar */
+    }
+
+    .sidebar {
+        display: block;
+        /* Mostra a sidebar em telas grandes */
+    }
+
+    .header-title h1 {
+        font-size: 4.5rem;
+        /* 72px */
+    }
+
+    .main-article-title {
+        font-size: 3rem;
+        /* 48px */
+    }
+}

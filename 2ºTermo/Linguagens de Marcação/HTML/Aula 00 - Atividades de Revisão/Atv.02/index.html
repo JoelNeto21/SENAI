@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[newspaper] - Seu Portal de Notícias</title>
+    <!-- Inclui as fontes do Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@700&display=swap"
+        rel="stylesheet">
+    <!-- Inclui os ícones do Bootstrap Icons -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Cabeçalho Principal - Masthead do Jornal -->
+    <header class="header">
+        <div class="container header-content">
+
+            <!-- Data e Previsão do Tempo (Placeholder) -->
+            <div class="header-date-weather">
+                <span style="font-size: 1rem;"><span style="font-size: 1.1rem;">&#x2600;</span> 25°C, Ensolarado</span>
+                <br>Segunda-feira, 4 de Agosto de 2025
+            </div>
+
+            <!-- Título do Jornal - Estilo NYT -->
+            <div class="header-title">
+                <h1 class="font-headline">
+                    [newspaper]
+                </h1>
+            </div>
+
+            <!-- Botão de Login/Assinar -->
+            <div class="header-actions">
+                <a href="#">Buscar <i class="bi bi-search"></i></a>
+                <button class="btn-primary">Entrar</button>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Barra de Navegação Principal -->
+    <nav class="navbar">
+        <div class="container navbar-links">
+            <a href="#">Início</a>
+            <a href="#">Brasil</a>
+            <a href="#">Mundo</a>
+            <a href="#">Economia</a>
+            <a href="#">Tecnologia</a>
+            <a href="#">Cultura</a>
+            <a href="#">Esportes</a>
+            <a href="#">Opinião</a>
+        </div>
+    </nav>
+
+    <!-- Conteúdo Principal da Página -->
+    <main class="container main-content">
+        <div class="content-grid">
+
+            <!-- Coluna Principal de Artigos -->
+            <section class="main-articles-section">
+
+                <!-- Artigo em Destaque Grande -->
+                <article>
+                    <a href="main-article.html">
+                        <img src="img/back-fisicaquantica.png"
+                            alt="Imagem do artigo em destaque" class="main-article-image">
+                        <h2 class="font-headline main-article-title article-link">
+                            Física quântica: entenda de uma vez — ou não
+                        </h2>
+                        <p class="main-article-excerpt">
+                            O mundo quântico é incompreensível por natureza. Lá, as coisas atravessam paredes, se comunicam por "telepatia" e existem em vários lugares ao mesmo tempo. Essa é a parte fácil. Saiba qual é a difícil no texto abaixo — caso ele realmente esteja lá.
+                        </p>
+                    </a>
+                    <p class="main-article-meta">Por João Silva | 13 Out 2020 07h43</p>
+                </article>
+
+                <!-- Seção de Artigos Secundários em Colunas -->
+                <div class="secondary-articles-grid">
+                    <!-- Artigo Secundário 1 -->
+                    <article>
+                        <img src="img/imgcard-medicine.png"
+                            alt="Imagem do artigo secundário 1" class="secondary-article-image">
+                        <h3 class="font-headline secondary-article-title article-link">
+                            Avanços na Inteligência Artificial Prometem Revolucionar a Medicina
+                        </h3>
+                        <p class="secondary-article-excerpt">
+                            Novas pesquisas indicam que algoritmos de IA podem acelerar diagnósticos e personalizar
+                            tratamentos, abrindo um novo capítulo na saúde.
+                        </p>
+                        <p class="secondary-article-meta">Por Maria Souza | Tecnologia</p>
+                    </article>
+
+                    <!-- Artigo Secundário 2 -->
+                    <article>
+                        <img src="img/imgcard-lesswater.png"
+                            alt="Imagem do artigo secundário 2" class="secondary-article-image">
+                        <h3 class="font-headline secondary-article-title article-link">
+                            Crise Hídrica Atinge Grandes Cidades e Exige Medidas Urgentes
+                        </h3>
+                        <p class="secondary-article-excerpt">
+                            A escassez de água se agrava em metrópoles, forçando governos a implementar racionamento e
+                            buscar soluções de longo prazo.
+                        </p>
+                        <p class="secondary-article-meta">Por Carlos Lima | Brasil</p>
+                    </article>
+
+                    <!-- Artigo Secundário 3 -->
+                    <article>
+                        <img src="img/imgcard-robot.png"
+                            alt="Imagem do artigo secundário 3" class="secondary-article-image">
+                        <h3 class="font-headline secondary-article-title article-link">
+                            O Futuro do Trabalho: Como a Automação Redefine o Mercado
+                        </h3>
+                        <p class="secondary-article-excerpt">
+                            Empresas e trabalhadores se adaptam a um cenário onde a automação e a inteligência
+                            artificial transformam as carreiras e as habilidades demandadas.
+                        </p>
+                        <p class="secondary-article-meta">Por Ana Paula Costa | Economia</p>
+                    </article>
+
+                    <!-- Artigo Secundário 4 -->
+                    <article>
+                        <img src="img/imgcard-cannes.png"
+                            alt="Imagem do artigo secundário 4" class="secondary-article-image">
+                        <h3 class="font-headline secondary-article-title article-link">
+                            Festival de Cinema de Cannes Anuncia Vencedores e Surpresas
+                        </h3>
+                        <p class="secondary-article-excerpt">
+                            A 78ª edição do festival consagra novos talentos e filmes que prometem marcar a temporada de
+                            premiações.
+                        </p>
+                        <p class="secondary-article-meta">Por Ricardo Alves | Cultura</p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Barra Lateral (Sidebar) -->
+            <aside class="sidebar">
+                <h3 class="font-headline sidebar-title">Mais Lidas</h3>
+                <ul>
+                    <li>
+                        <a href="#" class="article-link">
+                            <span class="number">1.</span> Eleições 2026: Primeiras Pesquisas Indicam Cenário Disputado
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="article-link">
+                            <span class="number">2.</span> Descoberta Arqueológica Revela Antiga Civilização na Amazônia
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="article-link">
+                            <span class="number">3.</span> Mercado de Criptomoedas em Alta: Oportunidades e Riscos
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="article-link">
+                            <span class="number">4.</span> Nova Vacina Contra Gripe Apresenta Resultados Promissores
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="article-link">
+                            <span class="number">5.</span> Guia Gastronômico: Os Melhores Restaurantes de São Paulo
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="horizontal-divider"></div>
+
+                <h3 class="font-headline sidebar-title">Opinião</h3>
+                <ul>
+                    <li>
+                        <a href="#" class="article-link">
+                            O Desafio da Sustentabilidade no Agronegócio Brasileiro
+                            <span class="author">Por Dr. Marcos Oliveira</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="article-link">
+                            A Importância da Educação Financeira para Jovens
+                            <span class="author">Por Profa. Helena Santos</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="horizontal-divider"></div>
+
+                <!-- Anúncio (Placeholder) -->
+                <div class="ad-placeholder">
+                    <p style="font-weight: bold; margin-bottom: 8px;">Espaço Publicitário</p>
+                    <img src="https://placehold.co/300x250/F0F0F0/888888?text=[+Seu+Anuncio+Aqui+]" alt="Anúncio">
+                    <p style="margin-top: 8px;">Anuncie conosco e alcance milhões de leitores!</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 [newspaper]. <i>Todos os direitos reservados</i></p>
+            <div class="footer-links">
+                <a href="#">Sobre Nós</a>
+                <span>|</span>
+                <a href="#">Contato</a>
+                <span>|</span>
+                <a href="#">Política de Privacidade</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
