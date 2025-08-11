@@ -1,0 +1,16 @@
+#Clonar repositório na máquina local
+//Entrar na pasta que deseja clonar o repositório
+//Botão direito -> Git bash
+
+git config --global user.name "[name]"
+git config --global user.email "[email]"
+git clone [link do repositório]
+
+#Upar no GitHub
+//Entrar na pasta clonada
+//Botão direito -> Git bash
+
+git init
+git add .
+git commit -m "[text commit]"
+git push
