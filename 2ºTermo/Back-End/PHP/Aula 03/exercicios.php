@@ -2,6 +2,7 @@
     // 1. Verificação de Idade
     echo "#Ex.01\n";
     $idade = 17;
+    // $idade = readline("Digite sua idade: ");
 
     if ($idade >= 18) {
         echo "Maior de Idade";
@@ -12,6 +13,7 @@
     // 2. Classificação de Nota
     echo "\n\n#Ex.02\n";
     $nota = 7;
+    // $nota = readline("Digite a nota: ");
 
     if ($nota >= 9){
         echo "Excelente";
@@ -24,6 +26,7 @@
     // 3. Dia da Semana
     echo "\n\n#Ex.03\n";
     $dia = 2;
+    // $dia = readline("Digite um numero entre 1-7: ");
 
     switch ($dia) {
         case 1:
@@ -57,6 +60,9 @@
     $num1 = 3;
     $num2 = 5;
     $operador = '*';
+    // $num1 = readline("Digite um numero inteiro: ");
+    // $num2 = readline("Digite outro numero inteiro: ");
+    // $operador = readline("Digite um operador (+, -, *, /): ");
     $result;
 
     switch ($operador) {
@@ -115,6 +121,7 @@
     // 9. Classificação de Temperatura
     echo "\n\n#Ex.09\n";
     $temp = 23;
+    // $temp = readline("Digite o valor da temperatura (°C): ");
 
     if ($temp < 15){
         echo "Frio";
