@@ -1,0 +1,15 @@
+<input type="text" id="matrizTransposta" placeholder="Matriz (ex: 1,2,3;4,5,6)">
+    <button onclick="transporMatrizTela()">Transpor Matriz</button>
+    <p id="resultadoTransposta"></p>
+
+    <script>
+        function transporMatrizTela() {
+            const matriz = document.getElementById("matrizTransposta").value.split(";").map(linha => linha.split(",").map(Number));
+            const resultado = transporMatriz(matriz);
+            document.getElementById("resultadoTransposta").innerHTML = "Resultado: " + JSON.stringify(resultado);
+        }
+
+        function transporMatriz(matriz) {
+            // (Função transporMatriz conforme resposta anterior)
+        }
+    </script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revisão 2</title>
+    <body>
+        <h1>Revisão 2 - Atividade Dispositivos Antigos</h1>
+       Digite o aparelho que deseja consultar:  <input type="text" id="dispositivo">
+   
+        <button onclick="mostrarInformacoes()">Ver Dispositivo</button> <br>
+    
+        <p id="resultado"></p>
+    </body>
+    <script>
+        function mostrarInformacoes() {
+            const dispositivo = document.getElementById("dispositivo").value;
+            let informacao = "";
+
+            switch (dispositivo) {
+                case "fita Cassete":
+                    informacao = "A Fita Cassete foi um dos principais meios de armazenamento de áudio nos anos 70 e 80. Era usada para gravar e reproduzir músicas.";
+                    break;
+                case "dvd":
+                    informacao = "O DVD foi amplamente utilizado para armazenar vídeos e filmes com qualidade superior ao VHS. Popular nos anos 2000.";
+                    break;
+                case "cd":
+                    informacao = "O CD foi um marco na indústria musical, permitindo o armazenamento de músicas com alta qualidade de som.";
+                    break;
+                default:
+                    informacao = "Por favor, selecione um dispositivo válido.";
+            }
+
+            document.getElementById("resultado").innerText = informacao;
+        }
+    </script>
+</head>
+
+</html></select></html>

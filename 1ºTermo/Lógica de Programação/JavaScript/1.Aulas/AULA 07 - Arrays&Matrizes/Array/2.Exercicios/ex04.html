@@ -1,0 +1,16 @@
+<input type="text" id="vetorPares" placeholder="Digite 10 números separados por vírgula">
+    <button onclick="contarParesVetor()">Contar Pares</button>
+    <p id="resultadoPares"></p>
+
+    <script>
+        function contarParesVetor() {
+            const vetor = document.getElementById("vetorPares").value.split(",").map(Number);
+            let pares = 0;
+            for (let i = 0; i < vetor.length; i++) {
+                if (vetor[i] % 2 === 0) {
+                    pares++;
+                }
+            }
+            document.getElementById("resultadoPares").innerHTML = "Pares: " + pares;
+        }
+    </script>

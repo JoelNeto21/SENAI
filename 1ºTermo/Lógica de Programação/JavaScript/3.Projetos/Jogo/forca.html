@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Forca</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        .word {
+            font-size: 24px;
+            letter-spacing: 10px;
+        }
+        .letters {
+            margin-top: 20px;
+        }
+        .letters button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Jogo da Forca</h1>
+    <div class="word" id="word"></div>
+    <div class="letters" id="letters"></div>
+    <div class="message" id="message"></div>
+
+    <script>
+        const palavras = ["javascript", "programacao", "computador", "tecnologia", "internet"];
+        const palavraSecreta = palavras[Math.floor(Math.random() * palavras.length)];
+        const palavraExibida = Array(palavraSecreta.length).fill("_");
+        let tentativasRestantes = 6;
+
+        const wordElement = document.getElementById("word");
+        const lettersElement = document.getElementById("letters");
+        const messageElement = document.getElementById("message");
+
+        function atualizarPalavra() {
+            wordElement.textContent = palavraExibida.join(" ");
+        }
+
+        function criarBotoes() {
+            for (let i = 97; i <= 122; i++) {
+                const letra = String.fromCharCode(i);
+                const botao = document.createElement("button");
+                botao.textContent = letra;
+                botao.onclick = () => verificarLetra(letra, botao);
+                lettersElement.appendChild(botao);
+            }
+        }
+
+        function verificarLetra(letra, botao) {
+            botao.disabled = true;
+            if (palavraSecreta.includes(letra)) {
+                for (let i = 0; i < palavraSecreta.length; i++) {
+                    if (palavraSecreta[i] === letra) {
+                        palavraExibida[i] = letra;
+                    }
+                }
+                atualizarPalavra();
+                if (!palavraExibida.includes("_")) {
+                    messageElement.textContent = "Parabéns! Você venceu!";
+                    desativarBotoes();
+                }
+            } else {
+                tentativasRestantes--;
+                if (tentativasRestantes === 0) {
+                    messageElement.textContent = `Você perdeu! A palavra era "${palavraSecreta}".`;
+                    desativarBotoes();
+                }
+            }
+        }
+
+        function desativarBotoes() {
+            const botoes = lettersElement.querySelectorAll("button");
+            botoes.forEach(botao => botao.disabled = true);
+        }
+
+        atualizarPalavra();
+        criarBotoes();
+    </script>
+</body>
+</html>

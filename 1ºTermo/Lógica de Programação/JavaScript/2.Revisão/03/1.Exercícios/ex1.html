@@ -1,0 +1,79 @@
+<!-- 1. ATIVIDADE 1 - CAFETERIA CAFÉ EXPRESSO
+O Café Expresso oferece um menu com as seguintes opções:
+Café Expresso: R$ 5,00
+Cappuccino: R$ 8,00
+Chocolate Quente: R$ 7,50
+Chá: R$ 4,00
+Crie um programa que:
+● Exiba o menu para o cliente.
+● Receba a opção escolhida pelo cliente.
+● Calcule o valor total do pedido.
+● Exiba o pedido e o valor total para o cliente. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 1 - CAFETERIA CAFÉ EXPRESSO</title>
+</head>
+<body>
+    <h1>CAFETERIA</h1>
+    <h2>MENU</h2>
+    <ul>
+        <li>1. Café Expresso: R$ 5,00</li>
+        <li>2. Cappuccino: R$ 8,00</li>
+        <li>3. Chocolate Quente: R$ 7,50</li>
+        <li>4. Chá: R$ 4,00</li>
+    </ul>
+    <h2 id="resultado"></h2>
+
+    <script>
+        // Define os preços e nomes dos itens
+        const precos = [5.00, 8.00, 7.50, 4.00];
+        const itens = ["Café Expresso", "Cappuccino", "Chocolate Quente", "Chá"];
+
+        let total = 0; // Valor total do pedido
+        let pedido = []; // Lista de itens escolhidos
+
+        while (true) {
+            // Exibe o menu e solicita a escolha do cliente
+            const menu = `
+            Escolha uma opção:
+            1. Café Expresso - R$ 5,00
+            2. Cappuccino - R$ 8,00
+            3. Chocolate Quente - R$ 7,50
+            4. Chá - R$ 4,00
+            5. Finalizar pedido
+            `;
+            const opcao = parseInt(prompt(menu));
+
+            // Verifica se a opção é válida
+            if (opcao >= 1 && opcao <= 4) {
+                const itemEscolhido = itens[opcao - 1];
+                const valorItem = precos[opcao - 1];
+                total += valorItem; // Soma o valor do item ao total
+                pedido.push(itemEscolhido); // Adiciona o item à lista de pedidos
+            } else if (opcao === 5) {
+                // Finaliza o pedido
+                break;
+            } else {
+                // Exibe mensagem de erro para opções inválidas
+                alert("Opção inválida. Por favor, tente novamente.");
+            }
+        }
+
+        // Exibe o pedido e o valor total
+        if (pedido.length > 0) {
+            document.getElementById('resultado').innerHTML = `
+                Seu pedido é: <strong>${pedido.join(", ")}</strong>. <br>
+                Valor total: <strong>R$ ${total.toFixed(2)}</strong>.
+            `;
+        } else {
+            document.getElementById('resultado').innerHTML = `
+                <strong>Você não fez nenhum pedido.</strong>
+            `;
+        }
+    </script>
+</body>
+</html>

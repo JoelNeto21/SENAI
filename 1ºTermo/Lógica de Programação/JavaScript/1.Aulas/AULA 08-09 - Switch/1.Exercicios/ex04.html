@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    <h1>Calculadora Simples</h1>
+    <label for="num1Ex4">Número 1:</label>
+    <input type="number" id="num1Ex4" step="any"><br><br>
+
+    <label for="operadorEx4">Operador (+, -, *, /):</label>
+    <input type="text" id="operadorEx4" maxlength="1"><br><br>
+
+    <label for="num2Ex4">Número 2:</label>
+    <input type="number" id="num2Ex4" step="any"><br><br>
+
+    <button onclick="calcularExercicio4()">Calcular</button>
+    <div id="resultadoEx4" style="margin-top: 20px; font-weight: bold;"></div>
+
+    <script>
+    function calcularExercicio4() {
+        let num1 = parseFloat(document.getElementById("num1Ex4").value);
+        let num2 = parseFloat(document.getElementById("num2Ex4").value);
+        let operador = document.getElementById("operadorEx4").value;
+        let resultado;
+        switch (operador) {
+            case "+":
+                resultado = num1 + num2;
+                break;
+            case "-":
+                resultado = num1 - num2;
+                break;
+            case "*":
+                resultado = num1 * num2;
+                break;
+            case "/":
+                if (num2 !== 0) {
+                    resultado = num1 / num2;
+                } else {
+                    resultado = "Erro: Divisão por zero!";
+                }
+                break;
+            default:
+                resultado = "Operador inválido";
+        }
+        document.getElementById("resultadoEx4").innerHTML = `Resultado: <strong>${resultado}</strong>`;
+    }
+    </script>
+</body>
+</html>

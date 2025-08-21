@@ -1,0 +1,21 @@
+<input type="text" id="matriz1Mult" placeholder="Matriz 1 (ex: 1,2;3,4)">
+    <input type="text" id="matriz2Mult" placeholder="Matriz 2 (ex: 5,6;7,8)">
+    <button onclick="multiplicarMatrizesTela()">Multiplicar Matrizes</button>
+    <p id="resultadoMultMatrizes"></p>
+
+    <script>
+        function multiplicarMatrizesTela() {
+            const matriz1 = document.getElementById("matriz1Mult").value.split(";").map(linha => linha.split(",").map(Number));
+            const matriz2 = document.getElementById("matriz2Mult").value.split(";").map(linha => linha.split(",").map(Number));
+            const resultado = multiplicarMatrizes(matriz1, matriz2);
+            if (typeof resultado === "string") {
+                document.getElementById("resultadoMultMatrizes").innerHTML = resultado;
+            } else {
+                document.getElementById("resultadoMultMatrizes").innerHTML = "Resultado: " + JSON.stringify(resultado);
+            }
+        }
+
+        function multiplicarMatrizes(matriz1, matriz2) {
+            // (Função multiplicarMatrizes conforme resposta anterior)
+        }
+    </script>

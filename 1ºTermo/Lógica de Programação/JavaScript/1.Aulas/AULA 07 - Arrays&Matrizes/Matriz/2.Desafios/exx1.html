@@ -1,0 +1,31 @@
+<input type="text" id="matriz1Soma" placeholder="Matriz 1 (ex: 1,2;3,4)">
+    <input type="text" id="matriz2Soma" placeholder="Matriz 2 (ex: 5,6;7,8)">
+    <button onclick="somarMatrizesTela()">Somar Matrizes</button>
+    <p id="resultadoSomaMatrizes"></p>
+
+    <script>
+        function somarMatrizesTela() {
+            const matriz1 = document.getElementById("matriz1Soma").value.split(";").map(linha => linha.split(",").map(Number));
+            const matriz2 = document.getElementById("matriz2Soma").value.split(";").map(linha => linha.split(",").map(Number));
+            const resultado = somarMatrizes(matriz1, matriz2);
+            if (typeof resultado === "string") {
+                document.getElementById("resultadoSomaMatrizes").innerHTML = resultado;
+            } else {
+                document.getElementById("resultadoSomaMatrizes").innerHTML = "Resultado: " + JSON.stringify(resultado);
+            }
+        }
+
+        function somarMatrizes(matriz1, matriz2) {
+            if (matriz1.length !== matriz2.length || matriz1[0].length !== matriz2[0].length) {
+                return "Matrizes com dimensões diferentes";
+            }
+            const resultado = [];
+            for (let i = 0; i < matriz1.length; i++) {
+                resultado[i] = [];
+                for (let j = 0; j < matriz1[0].length; j++) {
+                    resultado[i][j] = matriz1[i][j] + matriz2[i][j];
+                }
+            }
+            return resultado;
+        }
+    </script>

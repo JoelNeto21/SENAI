@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revisão 1</title>
+</head>
+<body>
+    <h1>Revisão 1 - Atividade Signos</h1>
+
+    Digite o mês de seu signo (1 a 12): <input type="number" id="signo" min="1" max="12">
+   
+    <button onclick="mostrarsignos()">Ver Signo</button> <br>
+
+    <h1 id="resultado"></h1>
+    <script>
+        function mostrarsignos() {
+            let sig = parseInt(document.getElementById("signo").value); 
+            let resultado = "";
+
+            switch(sig) {
+                case 1: 
+                    resultado = "Capricórnio ou Aquário";
+                    break;
+                case 2: 
+                    resultado = "Aquário ou Peixes";
+                    break;
+                case 3: 
+                    resultado = "Peixes ou Áries";
+                    break;
+                case 4: 
+                    resultado = "Áries ou Touro";
+                    break;
+                case 5: 
+                    resultado = "Touro ou Gêmeos";
+                    break;
+                case 6: 
+                    resultado = "Gêmeos ou Câncer";
+                    break;
+                case 7: 
+                    resultado = "Câncer ou Leão";
+                    break;
+                case 8: 
+                    resultado = "Leão ou Virgem";
+                    break;
+                case 9: 
+                    resultado = "Virgem ou Libra";
+                    break;
+                case 10: 
+                    resultado = "Libra ou Escorpião";
+                    break;
+                case 11: 
+                    resultado = "Escorpião ou Sagitário";
+                    break;
+                case 12: 
+                    resultado = "Sagitário ou Capricórnio";
+                    break;
+                default:
+                    resultado = "Mês inválido. Digite um número entre 1 e 12.";
+            }
+           
+            document.getElementById("resultado").innerHTML = `Seu signo é: ${resultado}`;
+        }
+    </script>
+</body>
+</html>

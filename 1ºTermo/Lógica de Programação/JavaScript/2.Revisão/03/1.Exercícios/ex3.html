@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3 - Loja de Brinquedos</title>
+</head>
+<body>
+    <h1>Loja de Brinquedos</h1>
+    <h2 id="resultado"></h2>
+
+    <script>
+        // Lista de produtos
+        const produtos = [];
+        const quantidadeProdutos = parseInt(prompt("Quantos produtos deseja cadastrar?"));
+
+        // Solicita os dados de cada produto
+        for (let i = 0; i < quantidadeProdutos; i++) {
+            const codigo = parseInt(prompt(`Digite o código do produto ${i + 1}:`));
+            const nome = prompt(`Digite o nome do produto ${i + 1}:`);
+            const preco = parseFloat(prompt(`Digite o preço do produto ${nome}:`));
+            produtos.push({ codigo, nome, preco });
+        }
+
+        // Variável para armazenar o resultado
+        let resultado = "<ul>";
+
+        // Aplica o aumento de 10% para os produtos com código 1 e 10
+        produtos.forEach(produto => {
+            if (produto.codigo === 1 || produto.codigo === 10) {
+                const precoAumentado = (produto.preco * 1.10).toFixed(2);
+                resultado += `<li>${produto.nome} (Código: ${produto.codigo}): Preço com aumento: <strong>R$ ${precoAumentado}</strong></li>`;
+            } else {
+                resultado += `<li>${produto.nome} (Código: ${produto.codigo}): Preço sem aumento: <strong>R$ ${produto.preco.toFixed(2)}</strong></li>`;
+            }
+        });
+
+        resultado += "</ul>";
+
+        // Exibe o resultado na página
+        document.getElementById("resultado").innerHTML = resultado;
+    </script>
+</body>
+</html>

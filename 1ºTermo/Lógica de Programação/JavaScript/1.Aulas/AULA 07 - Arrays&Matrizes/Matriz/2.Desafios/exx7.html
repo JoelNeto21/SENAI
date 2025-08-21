@@ -1,0 +1,15 @@
+<input type="text" id="matrizRotacao" placeholder="Matriz (ex: 1,2;3,4)">
+    <button onclick="rotacionarMatrizTela()">Rotacionar Matriz</button>
+    <p id="resultadoRotacao"></p>
+
+    <script>
+        function rotacionarMatrizTela() {
+            const matriz = document.getElementById("matrizRotacao").value.split(";").map(linha => linha.split(",").map(Number));
+            const resultado = rotacionarMatriz(matriz);
+            document.getElementById("resultadoRotacao").innerHTML = "Resultado: " + JSON.stringify(resultado);
+        }
+
+        function rotacionarMatriz(matriz) {
+            // (Função rotacionarMatriz conforme resposta anterior)
+        }
+    </script>

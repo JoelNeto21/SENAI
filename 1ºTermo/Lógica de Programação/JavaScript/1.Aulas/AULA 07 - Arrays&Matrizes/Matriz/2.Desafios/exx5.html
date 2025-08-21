@@ -1,0 +1,15 @@
+<input type="text" id="matrizDiagonalSecundaria" placeholder="Matriz (ex: 1,2,3;4,5,6;7,8,9)">
+    <button onclick="somarDiagonalSecundariaTela()">Somar Diagonal Secundária</button>
+    <p id="resultadoDiagonalSecundaria"></p>
+
+    <script>
+        function somarDiagonalSecundariaTela() {
+            const matriz = document.getElementById("matrizDiagonalSecundaria").value.split(";").map(linha => linha.split(",").map(Number));
+            const resultado = somarDiagonalSecundaria(matriz);
+            document.getElementById("resultadoDiagonalSecundaria").innerHTML = "Soma: " + resultado;
+        }
+
+        function somarDiagonalSecundaria(matriz) {
+            // (Função somarDiagonalSecundaria conforme resposta anterior)
+        }
+    </script>

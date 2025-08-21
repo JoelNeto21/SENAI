@@ -1,0 +1,15 @@
+<input type="text" id="matrizIdentidade" placeholder="Matriz (ex: 1,0,0;0,1,0;0,0,1)">
+    <button onclick="verificarMatrizIdentidadeTela()">Verificar Matriz Identidade</button>
+    <p id="resultadoIdentidade"></p>
+
+    <script>
+        function verificarMatrizIdentidadeTela() {
+            const matriz = document.getElementById("matrizIdentidade").value.split(";").map(linha => linha.split(",").map(Number));
+            const resultado = verificarMatrizIdentidade(matriz);
+            document.getElementById("resultadoIdentidade").innerHTML = "É Matriz Identidade: " + resultado;
+        }
+
+        function verificarMatrizIdentidade(matriz) {
+            // (Função verificarMatrizIdentidade conforme resposta anterior)
+        }
+    </script>

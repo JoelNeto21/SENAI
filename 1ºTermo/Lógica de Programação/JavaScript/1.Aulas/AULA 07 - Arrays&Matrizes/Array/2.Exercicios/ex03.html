@@ -1,0 +1,16 @@
+<input type="text" id="vetorMaior" placeholder="Digite 7 números separados por vírgula">
+    <button onclick="encontrarMaiorVetor()">Maior Número</button>
+    <p id="resultadoMaior"></p>
+
+    <script>
+        function encontrarMaiorVetor() {
+            const vetor = document.getElementById("vetorMaior").value.split(",").map(Number);
+            let maior = vetor[0];
+            for (let i = 1; i < vetor.length; i++) {
+                if (vetor[i] > maior) {
+                    maior = vetor[i];
+                }
+            }
+            document.getElementById("resultadoMaior").innerHTML = "Maior: " + maior;
+        }
+    </script>

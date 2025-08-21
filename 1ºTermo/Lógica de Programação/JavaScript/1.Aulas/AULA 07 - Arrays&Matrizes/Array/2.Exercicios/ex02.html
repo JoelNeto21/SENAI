@@ -1,0 +1,14 @@
+<input type="text" id="vetorSomaSimples" placeholder="Digite 5 números separados por vírgula">
+    <button onclick="somarVetorSimples()">Somar</button>
+    <p id="resultadoSomaSimples"></p>
+
+    <script>
+        function somarVetorSimples() {
+            const vetor = document.getElementById("vetorSomaSimples").value.split(",").map(Number);
+            let soma = 0;
+            for (let i = 0; i < vetor.length; i++) {
+                soma += vetor[i];
+            }
+            document.getElementById("resultadoSomaSimples").innerHTML = "Soma: " + soma;
+        }
+    </script>

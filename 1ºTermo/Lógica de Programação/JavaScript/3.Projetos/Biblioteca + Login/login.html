@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="login.css" />
+    <title>Biblioteca Senai</title>
+  </head>
+  <body>
+    <div id="login" class="container">
+      <h1>Bem vindo à nossa Biblioteca</h1>
+      <h2>Faça login para continuar</h2>
+      <div class="form-group">
+        <label for="usuario">Login:</label>
+        <input type="text" id="usuario" placeholder="Digite sua senha" />
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" placeholder="Digite sua senha" />
+      </div>
+      <p><button onclick="validarLogin()">Entrar</button></p>
+      <!-- <p><button onclick="mostrarCadastroUsuario()">Cadastrar novo usuário</button></p>
+      <p><button onclick="esqueceuSenha()">Esqueceu a senha?</button></p> -->
+      <p id="mensagem" class="mensagem hidden"></p>
+    </div>
+
+    <!-- Formulário de Cadastro de Novo Usuário -->
+    <div id="cadastro-usuario" class="container hidden"></div>
+    <script src="biblioteca3.js"></script>
+  </body>
+</html>

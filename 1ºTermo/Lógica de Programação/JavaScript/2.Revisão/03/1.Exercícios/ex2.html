@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2 - Estoque de Produtos</title>
+</head>
+<body>
+    <h1>Conferência de Estoque</h1>
+    <h2 id="resultado"></h2>
+
+    <script>
+        // Lista de produtos
+        const produtos = [];
+        const quantidadeProdutos = parseInt(prompt("Quantos produtos deseja verificar?"));
+
+        // Solicita os dados de cada produto
+        for (let i = 0; i < quantidadeProdutos; i++) {
+            const nome = prompt(`Digite o nome do produto ${i + 1}:`);
+            const quantidade = parseInt(prompt(`Digite a quantidade em estoque do produto ${nome}:`));
+            produtos.push({ nome, quantidade });
+        }
+
+        // Variável para armazenar o resultado
+        let resultado = "<ul>";
+
+        // Verifica o estoque de cada produto
+        produtos.forEach(produto => {
+            if (produto.quantidade < 30) {
+                resultado += `<li>${produto.nome}: <strong>Estoque Baixo</strong> (${produto.quantidade} unidades)</li>`;
+            } else if (produto.quantidade > 100) {
+                resultado += `<li>${produto.nome}: <strong>Estoque Bom</strong> (${produto.quantidade} unidades)</li>`;
+            } else {
+                resultado += `<li>${produto.nome}: Estoque Regular (${produto.quantidade} unidades)</li>`;
+            }
+        });
+
+        resultado += "</ul>";
+
+        // Exibe o resultado na página
+        document.getElementById("resultado").innerHTML = resultado;
+    </script>
+</body>
+</html>

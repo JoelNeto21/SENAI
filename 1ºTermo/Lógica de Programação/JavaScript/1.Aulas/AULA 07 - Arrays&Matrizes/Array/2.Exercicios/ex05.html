@@ -1,0 +1,10 @@
+<input type="text" id="vetorInverter" placeholder="Digite 6 elementos separados por vírgula">
+    <button onclick="inverterVetorSimples()">Inverter Vetor</button>
+    <p id="resultadoInverter"></p>
+
+    <script>
+        function inverterVetorSimples() {
+            const vetor = document.getElementById("vetorInverter").value.split(",").map(Number);
+            document.getElementById("resultadoInverter").innerHTML = "Vetor Invertido: " + vetor.reverse();
+        }
+    </script>
