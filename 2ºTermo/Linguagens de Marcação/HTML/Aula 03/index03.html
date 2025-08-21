@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagens Dinâmicas</title>
+</head>
+
+<body>
+    <h1>Imagens Dinâmicas</h1>
+    <picture>
+        <source media="(max-width: 800px") srcset="adventure2P.jpg" type="image/jpg">
+        <source media="(max-width: 1200px)" srcset="adventure2M.jpg" type="image/jpg">
+        <source srcset="adventure2.jpg" type="image/jpg">
+        <img src="adventure2.jpg" alt="A imagem flexivel funciona">
+    </picture>    
+</body>
+
+</html>

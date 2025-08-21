@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listas</title>
+</head>
+
+<body>
+    <h1>Listas Ordenadas</h1>
+    <p>Type [1] / <strong>default</strong></p>
+    <ol>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <ol type="a">
+            <li>Item 3a</li>
+        </ol>
+    </ol>
+
+    <p>Type [A]</p>
+    <ol type="A" start="4">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ol>
+
+    <p>Type [a]</p>
+    <ol type="a" start="7">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ol>
+
+    <p>Type [I]</p>
+    <ol type="I" start="10">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ol>
+
+    <p>Type [i]</p>
+    <ol type="i" start="13">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ol>
+
+    <br>
+    <hr> <!-- ———————————————————————————————————— -->
+    <br>
+
+    <h1>Listas não ordenada</h1>
+    <p>Type [disc] / <strong>default</strong></p>
+    <ul type="disc">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <p>Type [square]</p>
+    <ul type="square">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <p>Type [circle]</p>
+    <ul type="circle">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <p>Type [none]</p>
+    <ul type="none">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <br>
+    <hr> <!-- ———————————————————————————————————— -->
+    <br>
+
+    <h1>Listas de Definições</h1>
+    <dl>
+        <dt>HTML</dt>
+            <dd>Linguagem de Marcação de Hipertexto</dd>
+        <dt>CSS</dt>
+            <dd>Folhas de Estilo em Cascata</dd>
+        <dt>JS</dt>
+            <dd>JavaScript</dd>
+    </dl>
+
+    <br>
+    <hr> <!-- ———————————————————————————————————— -->
+    <br>
+
+    <h1>ATIVIDADE</h1>
+    <ol>
+        <li>Drama</li>
+        <ul type="square">
+            <li>Breaking Bad</li>
+            <ul type="circle">
+                <li>Better Call Saul</li>
+            </ul>
+            <li>Vampire Diaries</li>
+            <ul type="circle">
+                <li>The Originals</li>
+            </ul>
+        </ul>
+        <li>Ação</li>
+        <ul type="circle">
+            <li>Banshee</li>
+            <li>Fargo</li>
+        </ul>
+        <li>Fantasia</li>
+        <ul type="square">
+            <li>Game of Thrones</li>
+            <ul type="circle">
+                <li>House of the Dragon</li>
+            </ul>
+        </ul>
+        <li>Terror</li>
+        <ul type="square">
+            <li>The Walking Dead</li>
+            <ul type="circle">
+                <li>The Walking Dead: Dead City</li>
+                <li>Fear of the Walking Dead</li>
+            </ul>
+        </ul>
+    </ol>
+
+    <br><br>
+</body>
+
+</html>
