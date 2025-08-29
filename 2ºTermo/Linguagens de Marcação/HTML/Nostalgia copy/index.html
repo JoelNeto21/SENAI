@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nostalgia Animada: Desenhos dos Anos 80 e 90</title>
+    <!-- Google Fonts - Inter for better readability -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    <!-- Google Fonts - Press Start 2P for retro feel (used only for H1) -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #111;
+            color: #fff700;
+            margin: 0;
+        }
+        header, footer {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            background: #ff0080;
+            color: #fff700;
+        }
+        h1 {
+            font-size: 2rem;
+            color: #00f0ff;
+            text-shadow: 1px 1px #ff0080;
+            font-family: 'Press Start 2P', cursive; /* Fonte retro só no h1 */
+        }
+        main {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+            gap: 1rem;
+            justify-items: center;
+            padding: 1rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .card-bg {
+            background: #000;
+            border: 2px solid #00f0ff;
+            border-radius: 1rem;
+            box-shadow: 0 0 10px #ff008080;
+            width: 100%;
+            max-width: 300px;
+            padding: 1rem;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+        }
+        .card-bg:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 24px #fff700cc, 0 0 10px #00f0ffcc;
+            border-color: #ff0080;
+        }
+        .card-bg img {
+            width: 100%;
+            border-radius: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .card-bg h2 {
+            color: #fff700;
+            font-size: 1.2rem;
+            margin: 0.5rem 0;
+        }
+        .card-bg p {
+            color: #00f0ff;
+            font-size: 0.95rem;
+            margin: 0.3rem 0;
+        }
+        .tv-button {
+            background: #ff0080;
+            color: #fff700;
+            border: none;
+            border-radius: 0.3rem;
+            padding: 0.4rem 0.8rem;
+            margin: 0.5rem 0;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .tv-button:hover {
+            background: #00f0ff;
+            color: #ff0080;
+        }
+        .audio-player {
+            width: 100%;
+            margin: 0.5rem 0;
+        }
+        .credit {
+            color: #fff700;
+            font-size: 0.8rem;
+        }
+        .footer-links a {
+            color: #00f0ff;
+            margin: 0 0.3rem;
+            text-decoration: none;
+        }
+        .footer-links a:hover {
+            color: #fff700;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nostalgia Animada</h1>
+        <p>Relembre os desenhos animados que marcaram os anos 80 e 90!</p>
+    </header>
+    <main>
+        <!-- Card: Pica-Pau -->
+        <div class="card-bg">
+            <img src="https://placehold.co/300x170/3a3a3a/f0f0f0?text=Pica-Pau" alt="Pica-Pau">
+            <h2>Pica-Pau</h2>
+            <p>Ano: 1940</p>
+            <p>O famoso pássaro sempre aprontando confusões.</p>
+            <a href="https://www.youtube.com/watch?v=-HiYK9Jj0sg" target="_blank" class="tv-button">
+                <i class="fab fa-youtube"></i>Vídeo
+            </a>
+            <audio controls class="audio-player">
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mpeg">
+            </audio>
+            <div class="credit">Áudio: SoundHelix (exemplo)</div>
+        </div>
+        <!-- Card: Flintstones -->
+        <div class="card-bg">
+            <img src="https://placehold.co/300x170/3a3a3a/f0f0f0?text=Flintstones" alt="Os Flintstones">
+            <h2>Os Flintstones</h2>
+            <p>Ano: 1960</p>
+            <p>A família da Idade da Pedra e suas aventuras em Bedrock.</p>
+            <a href="https://www.youtube.com/watch?v=RzT64kazFUg" target="_blank" class="tv-button">
+                <i class="fab fa-youtube"></i>Vídeo
+            </a>
+            <audio controls class="audio-player">
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3" type="audio/mpeg">
+            </audio>
+            <div class="credit">Áudio: SoundHelix (exemplo)</div>
+        </div>
+        <!-- Card: Corrida Maluca -->
+        <div class="card-bg">
+            <img src="https://placehold.co/300x170/3a3a3a/f0f0f0?text=Corrida+Maluca" alt="Corrida Maluca">
+            <h2>Corrida Maluca</h2>
+            <p>Ano: 1968</p>
+            <p>Corrida cheia de trapaças e carros excêntricos.</p>
+            <a href="https://www.youtube.com/watch?v=9aQntZfdU4o" target="_blank" class="tv-button">
+                <i class="fab fa-youtube"></i>Vídeo
+            </a>
+            <audio controls class="audio-player">
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3" type="audio/mpeg">
+            </audio>
+            <div class="credit">Áudio: SoundHelix (exemplo)</div>
+        </div>
+        <!-- Card: A Vaca e o Frango -->
+        <div class="card-bg">
+            <img src="https://placehold.co/300x170/3a3a3a/f0f0f0?text=A+Vaca+e+o+Frango" alt="A Vaca e o Frango">
+            <h2>A Vaca e o Frango</h2>
+            <p>Ano: 1997</p>
+            <p>Aventuras surreais de dois irmãos muito diferentes.</p>
+            <a href="https://www.youtube.com/watch?v=3a980qaiXEM" target="_blank" class="tv-button">
+                <i class="fab fa-youtube"></i>Vídeo
+            </a>
+            <audio controls class="audio-player">
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3" type="audio/mpeg">
+            </audio>
+            <div class="credit">Áudio: SoundHelix (exemplo)</div>
+        </div>
+        <!-- Card: Cavaleiros do Zodíaco -->
+        <div class="card-bg">
+            <img src="https://placehold.co/300x170/3a3a3a/f0f0f0?text=Cavaleiros+do+Zodíaco" alt="Os Cavaleiros do Zodíaco">
+            <h2>Cavaleiros do Zodíaco</h2>
+            <p>Ano: 1986</p>
+            <p>Jovens guerreiros protegendo a deusa Atena.</p>
+            <a href="https://www.youtube.com/watch?v=Nds9oPVLATc" target="_blank" class="tv-button">
+                <i class="fab fa-youtube"></i>Vídeo
+            </a>
+            <audio controls class="audio-player">
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3" type="audio/mpeg">
+            </audio>
+            <div class="credit">Áudio: SoundHelix (exemplo)</div>
+        </div>
+        <!-- Card: Tartarugas Ninjas -->
+        <div class="card-bg">
+            <img src="https://placehold.co/300x170/3a3a3a/f0f0f0?text=Tartarugas+Ninjas" alt="As Tartarugas Ninjas">
+            <h2>Tartarugas Ninjas</h2>
+            <p>Ano: 1987</p>
+            <p>Quatro tartarugas mutantes lutando contra o crime.</p>
+            <a href="https://www.youtube.com/watch?v=Q0ngG4lefGo" target="_blank" class="tv-button">
+                <i class="fab fa-youtube"></i>Vídeo
+            </a>
+            <audio controls class="audio-player">
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" type="audio/mpeg">
+            </audio>
+            <div class="credit">Áudio: SoundHelix (exemplo)</div>
+        </div>
+    </main>
+    <footer>
+        <p>Feito com <i class="fas fa-heart"></i> por um fã dos anos 80 e 90.</p>
+        <div class="footer-links">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+    </footer>
+</body>
+</html>
