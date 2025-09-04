@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #titulo-principal {
+            background-color: darkgreen;
+            color: white;
+            text-align: center;
+        }
+
+        .topico {
+            text-align: right;
+        }
+
+        .texto {
+            text-align: justify;
+        }
+
+        a {
+            font-weight: bold;
+            text-decoration: none;
+            color: red;
+        }
+
+        a:visited {
+            color: darkred;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .especial:hover {
+            color: white;
+            background-color: black;
+            text-decoration: none;
+        }
+
+        .especial::before {
+            content: ">>";
+            font-weight: lighter;
+        }
+
+        .especial::after {
+            content: "<<";
+            font-weight: lighter;
+        }
+
+        div > p {
+            display: none;
+        }
+
+        div:hover > p {
+            display: block;
+            background-color: yellowgreen;
+        }
+    </style>
+    <title>Seletores em CSS</title>
+</head>
+
+<body>
+    <h1 id="titulo-principal">Aprendendo Desenvolvimento</h1>
+    <h1>HTML</h1>
+    <h2 class="topico">Tópico 1</h2>
+    <p class="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas laborum aliquam impedit esse officiis
+        odit distinctio vitae assumenda dolore quaerat cupiditate magnam placeat ratione consequatur ea ducimus, atque
+        velit sapiente.</p>
+
+    <a href="https://www.google.com">Google</a>
+
+    <a class="especial" href="https://youtube.com">Youtube</a>
+
+    <h1>Conteúdo especial</h1>
+    <div>
+        Passe o mouse aqui:
+        <p>Oras Bolas!</p>
+    </div>
+</body>
+
+</html>
