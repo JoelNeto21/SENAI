@@ -1,11 +1,158 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Vitrine 2025: Moda, Essência e Estilo em Alta Definição</title>
+    <link rel="stylesheet" href="style.css">
+
+
 </head>
+
 <body>
-    
+
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container header-content">
+            <div class="header-title">
+                <h1>Vitrine 2025</h1>
+            </div>
+            <nav class="main-nav">
+                <a href="#">Moda</a>
+                <a href="#">Beleza</a>
+                <a href="#">Design</a>
+                <button id="cart-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" style="width: 1.5rem; height: 1.5rem; color: #000;">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M2.25 3h1.386c.51 0 .955.343 1.07.855l.894 4.105m-.422 1.956.805 3.527a1.87 1.87 0 0 0 1.884 1.486H18.75a1.87 1.87 0 0 0 1.884-1.486l1.294-5.467m-1.764-8.892c.677-.96 1.749-1.396 2.768-.922a1.874 1.874 0 0 1 2.227 2.24L20.5 7.5l-.261 1.139M18.75 16.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0ZM14.25 16.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" />
+                    </svg>
+                    <span id="cart-counter">0</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal - Galeria de Produtos -->
+    <main>
+        <div class="container">
+            <section class="section-intro">
+                <h2>O Essencial de 2025</h2>
+                <p>
+                    Uma curadoria especial de peças que definem o estilo de hoje e criam as tendências do amanhã.
+                    Descubra a inovação em cada detalhe.
+                </p>
+            </section>
+
+            <!-- Galeria com Scroll Horizontal Interativo -->
+            <div id="gallery-trigger" class="carousel-wrapper">
+                <div id="product-carousel" class="carousel-container">
+                    <!-- Produtos serão injetados aqui via JS -->
+                </div>
+                <!-- Botão e texto "Ver Mais" - Posicionado como um overlay na lateral -->
+                <div id="view-more-container" class="view-more-container">
+                    <span class="view-more-text">Ver Mais</span>
+                    <a href="more.html" id="view-more-btn" class="view-more-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal do Carrinho -->
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Meu Carrinho</h3>
+                <button id="close-cart-button" class="close-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" style="width: 1.5rem; height: 1.5rem;">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div id="cart-items">
+                <p id="empty-cart-message" style="text-align: center; color: #6b7280;">Seu carrinho está vazio.</p>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cart-total">R$ 0,00</span>
+                </div>
+                <button class="checkout-btn">
+                    Finalizar Compra
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container footer-grid">
+            <!-- Sobre Nós -->
+            <div class="footer-col">
+                <h4>Vitrine 2025</h4>
+                <p style="font-size: 0.875rem; line-height: 1.5;">
+                    Nossa missão é trazer o que há de mais inovador em moda, design e estilo. Uma curadoria impecável
+                    para você se expressar.
+                </p>
+            </div>
+            <!-- Links Rápidos -->
+            <div class="footer-col">
+                <h4>Links Úteis</h4>
+                <ul>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="#">Termos</a></li>
+                    <li><a href="#">Privacidade</a></li>
+                </ul>
+            </div>
+            <!-- Redes Sociais -->
+            <div class="footer-col">
+                <h4>Siga-nos</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="currentColor" stroke="none">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07c3.252.148 4.772 1.691 4.904 4.904.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.132 3.213-1.652 4.734-4.904 4.904-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.772-1.691-4.904-4.904-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.132-3.213 1.652-4.734 4.904-4.904 1.266-.058 1.646-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.211-6.408 2.329-6.618 6.618-.058 1.28-.072 1.688-.072 4.947s.014 3.667.072 4.947c.21 4.289 2.329 6.398 6.618 6.618 1.28.058 1.688.072 4.947.072s3.667-.014 4.947-.072c4.289-.21 6.398-2.329 6.618-6.618.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.21-4.289-2.329-6.398-6.618-6.618-1.28-.058-1.688-.072-4.947-.072z" />
+                            <path
+                                d="M12 6.865c-2.89 0-5.72 2.316-5.72 5.135s2.83 5.135 5.72 5.135 5.72-2.316 5.72-5.135-2.83-5.135-5.72-5.135zm0 8.275c-1.745 0-3.16-1.425-3.16-3.14s1.415-3.14 3.16-3.14 3.16 1.425 3.16 3.14-1.415 3.14-3.16 3.14zM20.2 7.21a.91.91 0 0 1-.91-.91.91.91 0 0 1 .91-.91.91.91 0 0 1 .91.91.91.91 0 0 1-.91.91z" />
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="currentColor" stroke="none">
+                            <path
+                                d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.583-1.333h2.417v-3.996h-3.21c-3.235 0-4.79 1.529-4.79 4.299v2.667z" />
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Twitter">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="currentColor" stroke="none">
+                            <path
+                                d="M22.46 6c-.85.37-1.78.62-2.75.7a4.93 4.93 0 0 0 2.16-2.65c-.95.58-2 .97-3.1.99A4.94 4.94 0 0 0 11.4 4.5c-3.3 0-5.97 2.67-5.97 5.97 0 .47.05.93.15 1.37-4.96-.25-9.35-2.62-12.3-6.22a5.95 5.95 0 0 0-.82 2.99c0 2.07 1.05 3.89 2.65 4.97A4.95 4.95 0 0 1 .5 14.5c0 .02.02.04.02.06.01 2.89 2.06 5.3 4.77 5.82a4.96 4.96 0 0 1-2.22.08c.76 2.37 2.96 4.1 5.6 4.17A9.97 9.97 0 0 0 20 18.5c0-.15-.01-.3-.02-.45a7.1 7.1 0 0 0 1.76-1.83 1.94 1.94 0 0 0 .58-1.25z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <!-- Newsletter -->
+            <div class="footer-col">
+                <h4>Assine Nossa Newsletter</h4>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Seu email" />
+                    <button type="submit">Assinar</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+
 </body>
+
 </html>
