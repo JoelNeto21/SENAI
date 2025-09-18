@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            width: 300px;
+            height: 50px;
+            background-color: rgb(79, 187, 230);
+            border: 10px solid rgb(100, 196, 81);
+            outline: 30px solid rgb(247, 219, 97);
+            padding: 10px 15px 20px 25px;
+            margin: 38px 10px 20px 30px;
+            /* margin: auto; */
+            text-align: center;
+        }
+
+        body {
+            font: 1em Arial, Helvetica, sans-serif;
+            background-color: peachpuff;
+        }
+
+        article#caixa {
+            background-color: snow;
+            width: 400px;
+            margin: auto;
+            padding: 1px 20px;
+            box-shadow: 3px 5px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 10px 30px;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Cabeçalho</h1><br>
+        <h1>Block Level</h1><br>
+        <nav>Link</nav>
+    </header>
+    <main>
+        <section>
+            <p>Sessão 1</p>
+            <article id="caixa">
+                <p>Sub-Sessão</p>
+                <aside>
+                    <p>Sub-Sub-Sessão</p>
+                </aside>
+            </article>
+        </section>
+    </main>
+</body>
+
+</html>
