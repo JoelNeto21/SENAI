@@ -1,0 +1,61 @@
+-- Geração de Modelo físico
+-- Sql ANSI 2003 - brModelo.
+
+
+
+CREATE TABLE Editoras (
+CodEditora INT PRIMARY KEY AUTO_INCREMENT PRIMARY KEY,
+Contato VARCHAR(100),
+Telefone INT,
+Cidade VARCHAR(50),
+CNPJ VARCHAR(18) UNIQUE,
+Endereco VARCHAR(255),
+Nome VARCHAR(100) NOT NULL
+)
+
+CREATE TABLE Autores (
+CodAutor INT PRIMARY KEY AUTO_INCREMENT PRIMARY KEY,
+Nacionalidade VARCHAR(50),
+DataNasc DATE,
+Nome VARCHAR(100) NOT NULL
+)
+
+CREATE TABLE Clientes (
+CodCliente INT PRIMARY KEY AUTO_INCREMENT PRIMARY KEY,
+Nome VARCHAR(100) NOT NULL,
+CPF VARCHAR(14) NOT NULL,
+Email VARCHAR(100) UNIQUE,
+Telefone INT,
+DataNasc DATE
+)
+
+CREATE TABLE Livros (
+CodLivro INT PRIMARY KEY AUTO_INCREMENT PRIMARY KEY,
+Titulo VARCHAR(255) NOT NULL,
+Autor VARCHAR(100),
+Editora VARCHAR(100),
+Genero VARCHAR(50),
+Preco DECIMAL(10,2),
+Qtde INT,
+CodAutor INT PRIMARY KEY AUTO_INCREMENT,
+FOREIGN KEY(CodAutor) REFERENCES Autores (CodAutor)
+)
+
+CREATE TABLE Publica (
+CodLivro INT,
+CodEditora INT,
+FOREIGN KEY(CodLivro) REFERENCES Livros (CodLivro),
+FOREIGN KEY(CodEditora) REFERENCES Editoras (CodEditora)
+)
+
+CREATE TABLE Vendas (
+CodVenda INT PRIMARY KEY AUTO_INCREMENT, -- ADD
+DataVenda DATE, -- ADD
+Qtde INT, -- ADD
+ValorTotal DECIMAL(5,2), -- ADD
+CodCliente INT,
+CodLivro INT,
+FOREIGN KEY(CodCliente) REFERENCES Clientes (CodCliente),
+FOREIGN KEY(CodLivro) REFERENCES Clientes (CodLivro)
+)
+
