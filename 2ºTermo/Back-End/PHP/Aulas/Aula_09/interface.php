@@ -17,7 +17,7 @@ namespace Aula_09;
 Interface: 
     É um recurso no qual garante que obrigatoriamente a classe tenha que construir algum método previamente determinado. Funciona como um contrato.
     Exemplo: Configuramos uma interface "Pagamento" que faz com que qualquer classe que a implemente, tenha que obrigatoriamente construir o método "pagar()".
-*/
+*/ 
 
 interface Pagamento
 {
