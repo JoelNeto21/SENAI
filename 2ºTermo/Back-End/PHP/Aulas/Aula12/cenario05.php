@@ -20,3 +20,64 @@
         Livro
         Revista
 */
+
+//_____________________________________________
+
+// Class
+class SistemaDeBiblioteca{
+    // Attributes
+    // ...
+
+    // Method
+    public function registrarEmprestimo(){
+        // ...
+    }
+
+    public function registrarDevolucao(){
+        // ...
+    }
+}
+
+
+// Class
+class Usuario{
+    // Attributes
+    // ...
+
+    // Method
+    public function solicitarEmprestimo(){
+        // ...
+    }
+
+    public function devolverItem(){
+        // ...
+    }
+}
+
+
+// Class
+class ItemBibliotecario{
+    // Attributes
+    // ...
+
+    // Method
+    public function emprestar(){
+        // ...
+    }
+
+    public function devolver(){
+        // ...
+    }
+}
+
+
+// Class
+class Emprestimo{
+    // Attributes
+    // ...
+
+    // Method
+    public function finalizar(){
+        // ...
+    }
+}

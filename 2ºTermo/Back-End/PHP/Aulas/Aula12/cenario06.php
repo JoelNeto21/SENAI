@@ -13,3 +13,84 @@
     Cliente
         - comprar()
 */
+
+//_____________________________________________
+
+// Class
+class SistemaDeCinema{
+    // Attributes
+    // ...
+
+    // Method
+    public function exibirSessoes(){
+        // ...
+    }
+
+    public function venderIngresso(){
+        // ...
+    }
+}
+
+
+// Class
+class Cliente{
+    // Attributes
+    // ...
+
+    // Method
+    public function comprarIngresso(){
+        // ...
+    }
+}
+
+
+// Class
+class Filme{
+    // Attributes
+    // ...
+
+    // Method
+    public function getDetalhes(){
+        // ...
+    }
+}
+
+
+// Class
+class Sessao{
+    // Attributes
+    // ...
+
+    // Method
+    public function reservarAssento(){
+        // ...
+    }
+
+    public function liberarAssento(){
+        // ...
+    }
+}
+
+
+// Class
+class Ingresso{
+    // Attributes
+    // ...
+
+    // Method
+    public function validar(){
+        // ...
+    }
+}
+
+
+// Class
+class Sala{
+    // Attributes
+    // ...
+
+    // Method
+    public function verificarDisponibilidade(){
+        // ...
+    }
+}

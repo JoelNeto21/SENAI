@@ -16,3 +16,72 @@
     Jornada
         - chover()
 */
+
+//_____________________________________________
+
+// Class
+class Personagem{
+    // Attributes
+    // ...
+
+    // Method
+    public function seguirJornada(){
+        // ...
+    }
+
+    public function enfrentarDesafio(){
+        // ...
+    }
+
+    public function celebrar(){
+        // ...
+    }
+}
+
+
+// Class
+class Jornada{
+    // Attributes
+    // ...
+
+    // Method
+    public function avancar(){
+        // ...
+    }
+}
+
+
+// Class
+class Clima{
+    // Attributes
+    // ...
+
+    // Method
+    public function mudar(){
+        // ...
+    }
+}
+
+
+// Class
+class Dificuldade{
+    // Attributes
+    // ...
+
+    // Method
+    public function superar(){
+        // ...
+    }
+}
+
+
+// Class
+class Refeicao{
+    // Attributes
+    // ...
+
+    // Method
+    public function servir(){
+        // ...
+    }
+}

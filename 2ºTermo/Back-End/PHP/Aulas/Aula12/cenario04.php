@@ -17,3 +17,52 @@
         - escolher() 
         - doar()
 */
+
+//_____________________________________________
+
+// Class
+class Pessoa{
+    // Attributes
+    // ...
+
+    // Method
+    public function engravidar(){
+        // ...
+    }
+    public function nascer(){
+        // ...
+    }
+    public function crescer() {
+        // ...
+    }
+    public function fazerEscolha(){
+        // ...
+    }
+    public function doarSangue(){
+        // ...
+    }
+}
+
+
+// Class
+class Escolha{
+    // Attributes
+    // ...
+
+    // Method
+    public function executar(){
+        // ...
+    }
+}
+
+
+// Class
+class BancoDeSangue{
+    // Attributes
+    // ...
+
+    // Method
+    public function receberDoacao(){
+        // ...
+    }
+}

@@ -17,3 +17,71 @@
     Lugar
         - addComida()
 */
+
+//_____________________________________________
+
+// Class
+class Turista{
+    // Attributes
+    // ...
+
+    // Method
+    public function visitar(){
+        // ...
+    }
+
+    public function comer(){
+        // ...
+    }
+
+    public function nadar(){
+        // ...
+    }
+}
+
+// Class
+class Localidade{
+    // Attributes
+    // ...
+
+    // Method
+    public function informarAtividades(){
+        // ...
+    }
+}
+
+
+// Class
+class Atividade{
+    // Attributes
+    // ...
+
+    // Method
+    public function executar(){
+        // ...
+    }
+}
+
+
+// Class
+class Comida{
+    // Attributes
+    // ...
+
+    // Method
+    public function getDescricao(){
+        // ...
+    }
+}
+
+
+// Class
+class CorpoDagua{
+    // Attributes
+    // ...
+
+    // Method
+    public function getTipo(){
+        // ...
+    }
+}
