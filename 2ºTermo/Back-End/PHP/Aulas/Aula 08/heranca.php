@@ -59,7 +59,7 @@ class Cachorro_ extends Animal_{
     }
     public function getRaca(){
         return $this->raca;
-    }
+    } 
 }
 
 //@Child
