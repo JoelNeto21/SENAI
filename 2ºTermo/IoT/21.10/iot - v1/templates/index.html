@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Controle de LEDs com Arduino via Web</title>
+    <style>
+      :root {
+        /* CSS custom properties for easy theming */
+        --color-text: #333;
+        --color-on: #4caf50;
+        --color-on-hover: #267c2a;
+        --color-off: #f44336;
+        --color-off-hover: #ba000d;
+        --color-border: #ccc;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 20px;
+      }
+      h2 {
+        color: var(--color-text);
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        margin-top: 30px;
+      }
+      .led-label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+        font-size: 18px;
+      }
+      .led-card {
+        border: 1px solid var(--color-border);
+        padding: 40px;
+        border-radius: 10px;
+        width: 150px;
+      }
+      .buttons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+      .btn {
+        margin: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border: 1px solid var(--color-border);
+        border-radius: 5px;
+        color: #fff;
+      }
+      .btn--on {
+        background-color: var(--color-on);
+      }
+      .btn--on:hover {
+        background-color: var(--color-on-hover);
+      }
+      .btn--off {
+        background-color: var(--color-off);
+      }
+      .btn--off:hover {
+        background-color: var(--color-off-hover);
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Controle de LEDs com Arduino via Web</h2>
+
+    <div class="container">
+
+      <section id="led1" class="led-card">
+        <span class="led-label">LED 1 (Verde)</span>
+        <div class="buttons">
+          <button type="button" class="btn btn--on" onclick="controlLed('1', 'on')">Ligar</button>
+          <button type="button" class="btn btn--off" onclick="controlLed('1', 'off')">Desligar</button>
+        </div>
+      </section>
+
+      <section id="led2" class="led-card">
+        <span class="led-label">LED 2 (Vermelho)</span>
+        <div class="buttons">
+          <button type="button" class="btn btn--on" onclick="controlLed('2', 'on')">Ligar</button>
+          <button type="button" class="btn btn--off" onclick="controlLed('2', 'off')">Desligar</button>
+        </div>
+      </section>
+
+    </div>
+    
+    <script>
+      function controlLed(led, action) {
+        fetch(`/control/${led}/${action}`)
+          .then(response => response.text())
+          .then(data => {
+            console.log(data);
+          })
+          .catch(error => {
+            console.error('Erro:', error);
+          });
+      }
+    </script>
+  </body>
+</html>

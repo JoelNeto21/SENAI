@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semáforo Simples - IoT</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        .bloco {
+            margin-bottom: 20px;
+        }
+
+        .bloco h2 {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+        }
+
+        .bloco p {
+            font-size: 1.2em;
+        }
+
+        button {
+            font-size: 1em;
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+            color: white;
+        }
+
+        .on {
+            background-color: #28a745;
+        }
+
+        .off {
+            background-color: #dc3545;
+        }
+
+        .auto {
+            background-color: #007bff;
+        }
+        .stop {
+            background-color: #6c757d;
+        }
+
+        /* ===== Layout do Modo Manual (alinhado à esquerda) ===== */
+        .bloco.manual {
+            text-align: left; /* sobrepõe o alinhamento central do body apenas aqui */
+        }
+
+        /* Centraliza apenas o título do Modo Manual */
+        .bloco.manual h2 {
+            text-align: center;
+        }
+
+        .bloco.manual .row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 12px 0;
+            font-size: 1.05em;
+        }
+
+        .bloco.manual .label {
+            flex: 1 1 auto;
+            min-width: 200px; /* mantém os botões alinhados em coluna */
+        }
+
+        @media (max-width: 420px) {
+            .bloco.manual .row {
+                flex-wrap: wrap;
+            }
+            .bloco.manual .label {
+                min-width: 100%;
+                margin-bottom: 6px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Semáforo Simples</h1>
+
+        <div class="bloco">
+            <h2>Modo Automático</h2>
+            <p>
+                <button class="auto" onclick="iniciarSemaforo()">Iniciar Semáforo</button>
+                <button class="stop" onclick="pararSemaforo()">Parar Semáforo</button>
+            </p>
+            <p id="status"></p>
+        </div>
+
+        <div class="bloco manual">
+            <h2>Modo Manual</h2>
+            <div class="row">
+                <span class="label">LED Verde (Pino 9):</span>
+                <button class="on" onclick="controlarLed('verde', 'on')">Ligar</button>
+                <button class="off" onclick="controlarLed('verde', 'off')">Desligar</button>
+            </div>
+            <div class="row">
+                <span class="label">LED Amarelo (Pino 8):</span>
+                <button class="on" onclick="controlarLed('amarelo', 'on')">Ligar</button>
+                <button class="off" onclick="controlarLed('amarelo', 'off')">Desligar</button>
+            </div>
+            <div class="row">
+                <span class="label">LED Vermelho (Pino 7):</span>
+                <button class="on" onclick="controlarLed('vermelho', 'on')">Ligar</button>
+                <button class="off" onclick="controlarLed('vermelho', 'off')">Desligar</button>
+            </div>
+            <small>Dica: ao iniciar o modo automático, o Arduino assume a sequência e ignora os controles manuais até que você pare.</small>
+        </div>
+    </div>
+
+    <script>
+        // Controle manual dos LEDs
+        function controlarLed(ledId, action) {
+            fetch(`/control/${ledId}/${action}`)
+                .then(r => r.text())
+                .then(msg => updateStatus(msg))
+                .catch(err => updateStatus('Erro: ' + err));
+        }
+
+        // Iniciar/Parar semáforo automático
+        function iniciarSemaforo() {
+            fetch('/semaforo/start')
+                .then(r => r.text())
+                .then(msg => updateStatus(msg))
+                .catch(err => updateStatus('Erro: ' + err));
+        }
+
+        function pararSemaforo() {
+            fetch('/semaforo/stop')
+                .then(r => r.text())
+                .then(msg => updateStatus(msg))
+                .catch(err => updateStatus('Erro: ' + err));
+        }
+
+        function updateStatus(texto) {
+            const el = document.getElementById('status');
+            if (el) el.innerText = texto;
+            console.log(texto);
+        }
+    </script>
+</body>
+
+</html>
