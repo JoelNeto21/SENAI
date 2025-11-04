@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monitoramento de Temperatura - IoT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --color-text: #222;
+        --color-primary: #1976d2; /* simpler blue */
+        --color-success: #2e7d32;
+        --color-warning: #f57c00;
+        --color-danger: #d32f2f;
+        --color-border: #e0e0e0;
+        --color-bg-light: #ffffff;
+      }
+
+      body {
+        font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: var(--color-bg-light);
+        color: var(--color-text);
+      }
+      
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      
+      h1 {
+        text-align: center;
+        color: #000;
+        font-weight: 400;
+        margin-bottom: 30px;
+      }
+      
+      .dashboard {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        margin-bottom: 30px;
+      }
+      
+      .card {
+        background: #fff;
+        border-radius: 6px;
+        padding: 18px;
+        border: 1px solid var(--color-border);
+      }
+      
+      .card h2 {
+        margin-top: 0;
+        color: #000;
+        font-weight: 400;
+      }
+      
+      .temp-display {
+        text-align: center;
+        padding: 20px;
+      }
+      
+      .temp-value {
+        font-size: 2.4rem;
+        font-weight: 500;
+        margin: 8px 0;
+      }
+      
+      .temp-status {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+        border-radius: 25px;
+        color: white;
+        display: inline-block;
+        margin-top: 10px;
+      }
+      
+      .controls {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      
+      .control-group {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px;
+        border: 1px solid var(--color-border);
+        border-radius: 6px;
+        background: #f9f9f9;
+      }
+      
+      .control-label {
+        font-weight: 500;
+        flex: 1;
+      }
+      
+      .control-buttons {
+        display: flex;
+        gap: 10px;
+      }
+      
+      .btn {
+        padding: 9px 16px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 500;
+        transition: opacity 0.15s ease;
+        min-width: 80px;
+      }
+
+      .btn:hover { opacity: 0.95; }
+      
+      .btn-success {
+        background-color: var(--color-success);
+        color: white;
+      }
+      
+      .btn-danger {
+        background-color: var(--color-danger);
+        color: white;
+      }
+      
+      .btn-warning {
+        background-color: var(--color-warning);
+        color: white;
+      }
+      
+      .btn-primary {
+        background-color: var(--color-primary);
+        color: white;
+      }
+      
+      .status-indicator {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        margin-left: 10px;
+        vertical-align: middle;
+      }
+      
+      .status-on { background-color: #4caf50; } /* verde claro */
+      .status-off { background-color: #d0d0d0; }
+      
+      .info-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        margin-top: 20px;
+      }
+      
+      .info-item {
+        text-align: center;
+        padding: 15px;
+        background: #f8f9fa;
+        border-radius: 8px;
+        border: 1px solid var(--color-border);
+      }
+      
+      .info-value {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: var(--color-primary);
+      }
+      
+      .info-label {
+        font-size: 0.9rem;
+        color: #666;
+        margin-top: 5px;
+      }
+      
+      .alert {
+        padding: 15px;
+        border-radius: 5px;
+        margin: 10px 0;
+        font-weight: bold;
+      }
+      
+      .alert-danger {
+        background-color: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+      }
+      
+      .alert-warning {
+        background-color: #fff3cd;
+        color: #856404;
+        border: 1px solid #ffeaa7;
+      }
+      
+      @media (max-width: 768px) {
+        .dashboard {
+          grid-template-columns: 1fr;
+        }
+        
+        .control-group {
+          flex-direction: column;
+          gap: 10px;
+          align-items: stretch;
+        }
+        
+        .control-buttons {
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Sistema de Monitoramento de Temperatura</h1>
+      
+      <div class="dashboard">
+        <!-- Card de Temperatura -->
+        <div class="card">
+          <h2>Temperatura Atual</h2>
+          <div class="temp-display">
+            <div id="temperatura" class="temp-value">--°C</div>
+            <div id="status" class="temp-status">Carregando...</div>
+          </div>
+          
+          <div class="info-grid">
+            <div class="info-item">
+              <div id="limite-alto" class="info-value">--°C</div>
+              <div class="info-label">Limite Alto</div>
+            </div>
+            <div class="info-item">
+              <div id="limite-baixo" class="info-value">--°C</div>
+              <div class="info-label">Limite Baixo</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Card de Controles -->
+        <div class="card">
+          <h2>Controles</h2>
+          <div class="controls">
+            
+            <div class="control-group">
+              <div class="control-label">
+                🌀 Ventilador
+                <span id="ventilador-status" class="status-indicator status-off"></span>
+              </div>
+              <div class="control-buttons">
+                <button class="btn btn-success" onclick="controlarVentilador('on')">Ligar</button>
+                <button class="btn btn-danger" onclick="controlarVentilador('off')">Desligar</button>
+              </div>
+            </div>
+            
+            <div class="control-group">
+              <div class="control-label">
+                🔥 Aquecedor
+                <span id="aquecedor-status" class="status-indicator status-off"></span>
+              </div>
+              <div class="control-buttons">
+                <button class="btn btn-warning" onclick="controlarAquecedor('on')">Ligar</button>
+                <button class="btn btn-danger" onclick="controlarAquecedor('off')">Desligar</button>
+              </div>
+            </div>
+            
+          </div>
+          
+          <div style="margin-top: 20px; text-align: center;">
+            <small style="color: #666;">
+              ⚠️ O ventilador e aquecedor não podem funcionar simultaneamente
+            </small>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Alertas -->
+      <div id="alertas"></div>
+      
+      <!-- Log de atividades -->
+      <div class="card">
+        <h2>Histórico de Atividades</h2>
+        <div id="log" style="max-height: 160px; overflow-y: auto; background: #f8f9fa; padding: 10px; border-radius: 5px; font-family: monospace; font-size: 12px;">
+          Sistema iniciado...<br>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let ultimaTemperatura = null;
+      
+      function adicionarLog(mensagem) {
+        const log = document.getElementById('log');
+        const agora = new Date();
+        const timestamp = agora.toLocaleTimeString();
+        log.innerHTML += `[${timestamp}] ${mensagem}<br>`;
+        log.scrollTop = log.scrollHeight;
+      }
+      
+      function atualizarDados() {
+        fetch('/dados')
+          .then(response => response.json())
+          .then(data => {
+            document.getElementById('temperatura').textContent = `${data.temperatura}°C`;
+            document.getElementById('temperatura').style.color = data.cor_status;
+            
+            const statusElement = document.getElementById('status');
+            statusElement.textContent = data.status;
+            statusElement.style.backgroundColor = data.cor_status;
+            
+            document.getElementById('limite-alto').textContent = `${data.limite_alto}°C`;
+            document.getElementById('limite-baixo').textContent = `${data.limite_baixo}°C`;
+            
+            const ventiladorStatus = document.getElementById('ventilador-status');
+            const aquecedorStatus = document.getElementById('aquecedor-status');
+            
+            const ventiladorAtual = ventiladorStatus.classList.contains('status-on');
+            const aquecedorAtual = aquecedorStatus.classList.contains('status-on');
+            
+            if (data.ventilador_ativo !== ventiladorAtual) {
+              ventiladorStatus.className = `status-indicator ${data.ventilador_ativo ? 'status-on' : 'status-off'}`;
+            }
+            
+            if (data.aquecedor_ativo !== aquecedorAtual) {
+              aquecedorStatus.className = `status-indicator ${data.aquecedor_ativo ? 'status-on' : 'status-off'}`;
+            }
+            
+            gerarAlertas(data);
+            
+            if (ultimaTemperatura !== null && Math.abs(data.temperatura - ultimaTemperatura) > 1) {
+              adicionarLog(`Mudança de temperatura: ${ultimaTemperatura}°C → ${data.temperatura}°C`);
+            }
+            ultimaTemperatura = data.temperatura;
+          })
+          .catch(error => {
+            console.error('Erro ao buscar dados:', error);
+            adicionarLog('Erro de comunicação com o servidor');
+          });
+      }
+      
+      function gerarAlertas(data) {
+        const alertas = document.getElementById('alertas');
+        alertas.innerHTML = '';
+        
+        if (data.temperatura > data.limite_alto) {
+          alertas.innerHTML += `
+            <div class="alert alert-danger">
+              🚨 TEMPERATURA ALTA! ${data.temperatura}°C (Limite: ${data.limite_alto}°C)
+              ${!data.ventilador_ativo ? ' - Considere ligar o ventilador' : ''}
+            </div>
+          `;
+        }
+        
+        if (data.temperatura < data.limite_baixo) {
+          alertas.innerHTML += `
+            <div class="alert alert-warning">
+              🥶 Temperatura baixa: ${data.temperatura}°C (Limite: ${data.limite_baixo}°C)
+              ${!data.aquecedor_ativo ? ' - Considere ligar o aquecedor' : ''}
+            </div>
+          `;
+        }
+      }
+      
+      function controlarVentilador(acao) {
+        const ventiladorStatus = document.getElementById('ventilador-status');
+        const aquecedorStatus = document.getElementById('aquecedor-status');
+        
+        if (acao === 'on') {
+          aquecedorStatus.className = 'status-indicator status-off';
+          ventiladorStatus.className = 'status-indicator status-on';
+          adicionarLog('Aquecedor desligado automaticamente');
+        } else {
+          ventiladorStatus.className = 'status-indicator status-off';
+        }
+        
+        fetch(`/ventilador/${acao}`)
+          .then(response => response.text())
+          .then(data => {
+            console.log(data);
+            adicionarLog(`Ventilador ${acao === 'on' ? 'ligado' : 'desligado'}`);
+            setTimeout(() => atualizarDados(), 300);
+          })
+          .catch(error => {
+            console.error('Erro:', error);
+            adicionarLog('Erro ao controlar ventilador');
+            atualizarDados();
+          });
+      }
+      
+      function controlarAquecedor(acao) {
+        const ventiladorStatus = document.getElementById('ventilador-status');
+        const aquecedorStatus = document.getElementById('aquecedor-status');
+        
+        if (acao === 'on') {
+          ventiladorStatus.className = 'status-indicator status-off';
+          aquecedorStatus.className = 'status-indicator status-on';
+          adicionarLog('Ventilador desligado automaticamente');
+        } else {
+          aquecedorStatus.className = 'status-indicator status-off';
+        }
+        
+        fetch(`/aquecedor/${acao}`)
+          .then(response => response.text())
+          .then(data => {
+            console.log(data);
+            adicionarLog(`Aquecedor ${acao === 'on' ? 'ligado' : 'desligado'}`);
+            setTimeout(() => atualizarDados(), 300);
+          })
+          .catch(error => {
+            console.error('Erro:', error);
+            adicionarLog('Erro ao controlar aquecedor');
+            atualizarDados();
+          });
+      }
+      
+      document.addEventListener('DOMContentLoaded', function() {
+        adicionarLog('Interface web carregada');
+        atualizarDados();
+        setInterval(atualizarDados, 2000);
+      });
+    </script>
+  </body>
+</html>
